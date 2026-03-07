@@ -1,0 +1,182 @@
+{
+  "personal": {
+    "name": "Shashi Kumar Singh",
+    "title": "Lead DevOps Engineer | Platform Architect | Site Reliability Engineering Leader",
+    "location": "Gurugram, India",
+    "phone": "+91 7903286693",
+    "email": "shashi.gotit38@gmail.com",
+    "linkedin": "https://linkedin.com/in/shashi-kumar-singh-52984b127"
+  },
+
+  "summary": "Senior DevOps and Platform Engineering leader with 7+ years of experience designing scalable cloud infrastructure, Kubernetes platforms, and high-reliability distributed systems. Proven track record of building Internal Developer Platforms (IDP), implementing GitOps pipelines, and architecting hybrid multi-cloud environments across AWS, GCP, and Azure. Experienced in leading DevOps teams, improving developer productivity, and implementing Site Reliability Engineering practices to achieve 99.99% system uptime.",
+
+  "core_competencies": [
+    "DevOps Engineering",
+    "Platform Engineering",
+    "Site Reliability Engineering (SRE)",
+    "Cloud Architecture",
+    "Infrastructure as Code",
+    "Kubernetes Platform Design",
+    "GitOps Automation",
+    "CI/CD Pipeline Engineering",
+    "Hybrid Cloud Architecture",
+    "Observability Engineering",
+    "High Availability & Disaster Recovery",
+    "Developer Platform Enablement"
+  ],
+
+  "skills": {
+    "cloud_platforms": [
+      "Amazon Web Services (AWS)",
+      "Google Cloud Platform (GCP)",
+      "Microsoft Azure",
+      "Hybrid Cloud Architecture",
+      "Cloud Landing Zones"
+    ],
+
+    "containerization_and_orchestration": [
+      "Kubernetes",
+      "Amazon EKS",
+      "Google Kubernetes Engine (GKE)",
+      "Helm",
+      "Kubernetes Operators"
+    ],
+
+    "infrastructure_as_code": [
+      "Terraform",
+      "Ansible",
+      "Crossplane",
+      "Pulumi"
+    ],
+
+    "ci_cd_and_gitops": [
+      "Jenkins",
+      "GitHub Actions",
+      "GitLab CI",
+      "ArgoCD",
+      "GitOps Workflows"
+    ],
+
+    "observability_and_monitoring": [
+      "Prometheus",
+      "Grafana",
+      "ELK Stack",
+      "Datadog",
+      "Distributed Tracing"
+    ],
+
+    "security_and_devsecops": [
+      "IAM",
+      "Policy as Code",
+      "Open Policy Agent (OPA)",
+      "Zero Trust Architecture",
+      "Web Application Firewall"
+    ],
+
+    "programming_languages": [
+      "Python",
+      "Go",
+      "Bash",
+      "Groovy"
+    ],
+
+    "site_reliability_engineering": [
+      "SLI/SLO Design",
+      "Chaos Engineering",
+      "Incident Response",
+      "Error Budgets",
+      "Reliability Automation"
+    ]
+  },
+
+  "experience": [
+    {
+      "company": "Adidas",
+      "role": "Lead Platform Architect & Team Lead",
+      "duration": "Apr 2023 – Present",
+      "location": "Gurugram, India",
+      "responsibilities": [
+        "Led a cross-functional team of 8 DevOps and SRE engineers delivering enterprise cloud platform capabilities.",
+        "Architected a centralized Internal Developer Platform (IDP) enabling self-service infrastructure provisioning.",
+        "Reduced developer environment provisioning time by 90% through automation.",
+        "Designed hybrid multi-cloud infrastructure across AWS and GCP supporting high-traffic workloads.",
+        "Implemented self-healing infrastructure automation improving platform reliability to 99.99% uptime.",
+        "Established architectural standards for scalable microservices infrastructure."
+      ]
+    },
+
+    {
+      "company": "FIS Solutions",
+      "role": "Senior DevOps Engineer (Design Lead)",
+      "duration": "Sep 2022 – Mar 2023",
+      "location": "Gurugram, India",
+      "responsibilities": [
+        "Led migration of legacy monolithic financial systems to microservices architecture using AWS EKS.",
+        "Designed secure CI/CD pipelines compliant with PCI-DSS security requirements.",
+        "Implemented automated disaster recovery strategies ensuring business continuity for payment systems.",
+        "Improved deployment reliability using containerized infrastructure and infrastructure as code."
+      ]
+    },
+
+    {
+      "company": "Intimetec",
+      "role": "Systems Engineer",
+      "duration": "May 2021 – Sep 2022",
+      "location": "Jaipur, India",
+      "responsibilities": [
+        "Developed infrastructure automation scripts using Python and Ansible.",
+        "Managed Linux server infrastructure supporting high throughput enterprise systems.",
+        "Automated system configuration and patching workflows improving operational efficiency."
+      ]
+    }
+  ],
+
+  "projects": [
+    {
+      "name": "Enterprise Internal Developer Platform",
+      "category": "Platform Engineering",
+      "technologies": ["Kubernetes", "Crossplane", "Backstage"],
+      "impact": "Enabled self-service infrastructure provisioning for development teams reducing onboarding time by 90%.",
+      "description": "Designed and implemented an enterprise developer platform providing standardized infrastructure templates, automated environment provisioning, and centralized developer tooling."
+    },
+
+    {
+      "name": "Hybrid Multi-Cloud Landing Zone",
+      "category": "Cloud Architecture",
+      "technologies": ["Terraform", "AWS Control Tower", "Global Accelerator"],
+      "impact": "Enabled scalable multi-region infrastructure supporting active-active traffic routing.",
+      "description": "Architected a secure cloud landing zone with governance policies, organizational security controls, and automated infrastructure provisioning."
+    },
+
+    {
+      "name": "Enterprise Observability Framework",
+      "category": "Site Reliability Engineering",
+      "technologies": ["Prometheus", "Grafana", "Chaos Mesh"],
+      "impact": "Improved debugging and incident resolution across 50+ microservices.",
+      "description": "Designed a centralized monitoring and observability platform implementing SLIs, SLOs, logging standards, and chaos engineering experiments."
+    },
+
+    {
+      "name": "GitOps CI/CD Transformation",
+      "category": "DevOps Automation",
+      "technologies": ["ArgoCD", "GitHub Actions", "Helm"],
+      "impact": "Increased release velocity by 300% through automated GitOps workflows.",
+      "description": "Implemented automated GitOps based deployment pipelines enabling push-to-deploy capabilities and standardized CI/CD pipelines."
+    }
+  ],
+
+  "education": {
+    "degree": "Bachelor of Technology (B.Tech)",
+    "field": "Computer Science",
+    "institution": "Global Institute of Technology",
+    "location": "Jaipur, Rajasthan",
+    "year": "2020"
+  },
+
+  "certifications": [
+    "Certified Kubernetes Administrator (CKA)",
+    "AWS Certified Solutions Architect – Professional (Targeted)",
+    "Google Professional Cloud Architect (Targeted)",
+    "HashiCorp Certified: Terraform Associate"
+  ]
+}
