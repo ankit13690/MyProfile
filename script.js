@@ -1,188 +1,287 @@
-/* LOAD COMPONENTS */
+/* =================================
+PORTFOLIO APPLICATION CONTROLLER
+================================ */
 
-async function loadComponent(id,file){
+const App = {
 
-const element=document.getElementById(id)
+data: null,
 
-if(!element) return
 
-try{
+/* ================================
+INITIALIZE APPLICATION
+================================ */
 
-const response=await fetch(file)
+init: async function () {
 
-const html=await response.text()
+console.log("Initializing portfolio...")
 
-element.innerHTML=html
+await this.loadComponents()
 
-}catch(err){
+await this.loadData()
 
-console.log("Component load error",file)
+this.renderAll()
+
+},
+
+
+
+/* ================================
+LOAD HEADER / FOOTER
+================================ */
+
+loadComponents: async function () {
+
+await Promise.all([
+
+this.loadComponent("header", "components/header.html"),
+
+this.loadComponent("footer", "components/footer.html")
+
+])
+
+},
+
+
+
+loadComponent: async function (id, file) {
+
+try {
+
+const res = await fetch(file)
+
+const html = await res.text()
+
+document.getElementById(id).innerHTML = html
+
+} catch (err) {
+
+console.error("Component load failed:", file)
+
+}
+
+},
+
+
+
+/* ================================
+LOAD DATA.JSON
+================================ */
+
+loadData: async function () {
+
+try {
+
+const res = await fetch("data.json")
+
+this.data = await res.json()
+
+console.log("Data loaded successfully")
+
+} catch (err) {
+
+console.error("Failed loading data.json")
 
 }
 
-}
-
-
-/* SAFE DOM HELPERS */
-
-function setText(id,value){
-
-const el=document.getElementById(id)
-
-if(el) el.innerText=value
-
-}
-
-function setHref(id,value){
-
-const el=document.getElementById(id)
-
-if(el) el.href=value
-
-}
-
-function setSrc(id,value){
-
-const el=document.getElementById(id)
-
-if(el) el.src=value
-
-}
+},
 
 
 
-/* STAR GENERATOR */
+/* ================================
+RENDER ALL SECTIONS
+================================ */
 
-function generateStars(level){
+renderAll: function () {
 
-let stars=""
+if (!this.data) return
 
-for(let i=1;i<=5;i++){
+this.renderHero()
 
-if(i<=level){
+this.renderContact()
 
-stars+="★"
+this.renderSummary()
 
-}else{
+this.renderCompetencies()
 
-stars+="☆"
+this.renderSkills()
 
-}
+this.renderTools()
+
+this.renderExperience()
+
+this.renderProjects()
+
+this.renderCertifications()
+
+this.renderEducation()
+
+this.renderAchievements()
+
+this.renderTraining()
+
+this.renderFooter()
+
+},
+
+
+
+/* ================================
+UTILITIES
+================================ */
+
+setText(id, value) {
+
+const el = document.getElementById(id)
+
+if (el) el.innerText = value
+
+},
+
+setHref(id, value) {
+
+const el = document.getElementById(id)
+
+if (el) el.href = value
+
+},
+
+setSrc(id, value) {
+
+const el = document.getElementById(id)
+
+if (el) el.src = value
+
+},
+
+
+
+generateStars(level) {
+
+let stars = ""
+
+for (let i = 1; i <= 5; i++) {
+
+stars += i <= level ? "★" : "☆"
 
 }
 
 return stars
 
-}
+},
 
 
 
-/* LOAD PORTFOLIO */
+/* ================================
+HERO SECTION
+================================ */
 
-async function loadPortfolio(){
+renderHero() {
 
-await loadComponent("header","./components/header.html")
+const p = this.data.personal
 
-await loadComponent("footer","./components/footer.html")
+this.setText("name", p.name)
 
-let data
+this.setText("title", p.title)
 
-try{
+this.setText("tagline", p.tagline)
 
-const response=await fetch("./data.json")
+this.setSrc("profileImage", p.profileImage)
 
-data=await response.json()
+this.setHref("downloadResume", p.resume)
 
-}catch(err){
+this.setHref("linkedinBtn", p.linkedin)
 
-console.error("JSON load error")
+this.setHref("githubBtn", p.github)
 
-return
+this.setHref("whatsappBtn", p.whatsapp)
 
-}
-
-
-
-/* HERO */
-
-setSrc("profileImage",data.personal.profileImage)
-
-setHref("downloadResume",data.personal.resume)
-
-setHref("linkedinBtn",data.personal.linkedin)
-
-setHref("githubBtn",data.personal.github)
-
-setText("name",data.personal.name)
-
-setText("title",data.personal.title)
-
-setText("tagline",data.personal.tagline)
+},
 
 
 
-/* HEADER */
+/* ================================
+CONTACT BAR
+================================ */
 
-setText("headerName",data.personal.name)
+renderContact() {
 
-setHref("headerLinkedin",data.personal.linkedin)
+const p = this.data.personal
 
-setHref("headerGithub",data.personal.github)
+this.setText("emailText", p.email)
 
-setHref("headerEmail",data.personal.email)
+this.setText("phoneText", p.phone)
+
+this.setText("locationText", p.location)
+
+this.setHref("contactEmailBtn", "mailto:" + p.email)
+
+this.setHref("contactLinkedinBtn", p.linkedin)
+
+this.setHref("contactGithubBtn", p.github)
+
+},
 
 
 
-/* SUMMARY */
+/* ================================
+SUMMARY
+================================ */
 
-setText("summaryText",data.summary)
+renderSummary() {
+
+this.setText("summaryText", this.data.summary)
+
+},
 
 
 
-/* COMPETENCIES */
+/* ================================
+COMPETENCIES
+================================ */
 
-const comp=document.getElementById("competenciesContainer")
+renderCompetencies() {
 
-if(comp && data.coreCompetencies){
+const container = document.getElementById("competenciesContainer")
 
-comp.innerHTML=data.coreCompetencies
-.map(c=>`<span class="competency">${c}</span>`)
+if (!container) return
+
+container.innerHTML = this.data.coreCompetencies
+
+.map(c => `<span class="competency">${c}</span>`)
+
 .join("")
 
-}
+},
 
 
 
-/* SKILLS WITH STAR RATING */
+/* ================================
+SKILLS
+================================ */
 
-const skills=document.getElementById("skillsContainer")
+renderSkills() {
 
-if(skills && data.skills){
+const container = document.getElementById("skillsContainer")
 
-let html=""
+if (!container) return
 
-for(const category in data.skills){
+let html = ""
 
-html+=`<div class="skill-card"><h3>${category}</h3>`
+for (const category in this.data.skills) {
 
-data.skills[category].forEach(skill=>{
+html += `<div class="skill-card">
 
-let level=3
+<h3>${category}</h3>`
 
-if(skill.toLowerCase().includes("aws")) level=5
-if(skill.toLowerCase().includes("terraform")) level=5
-if(skill.toLowerCase().includes("kubernetes")) level=4
-if(skill.toLowerCase().includes("docker")) level=4
-if(skill.toLowerCase().includes("python")) level=3
-if(skill.toLowerCase().includes("jenkins")) level=4
+this.data.skills[category].forEach(skill => {
 
-html+=`
+html += `
 
 <div class="skill">
 
-<span>${skill}</span>
+<span>${skill.name}</span>
 
-<span class="skill-stars">${generateStars(level)}</span>
+<span class="skill-stars">${this.generateStars(skill.level)}</span>
 
 </div>
 
@@ -190,23 +289,61 @@ html+=`
 
 })
 
-html+=`</div>`
+html += `</div>`
 
 }
 
-skills.innerHTML=html
+container.innerHTML = html
+
+},
+
+
+
+/* ================================
+DEVOPS TOOL GRID
+================================ */
+
+renderTools() {
+
+const container = document.getElementById("toolsContainer")
+
+if (!container) return
+
+let tools = []
+
+for (const category in this.data.skills) {
+
+this.data.skills[category].forEach(skill => {
+
+tools.push(skill.name)
+
+})
 
 }
 
+tools = [...new Set(tools)]
+
+container.innerHTML = tools
+
+.map(t => `<div class="tool-card">${t}</div>`)
+
+.join("")
+
+},
 
 
-/* EXPERIENCE TIMELINE */
 
-const exp=document.getElementById("experienceContainer")
+/* ================================
+EXPERIENCE TIMELINE
+================================ */
 
-if(exp && data.experience){
+renderExperience() {
 
-exp.innerHTML=data.experience.map(job=>`
+const container = document.getElementById("experienceContainer")
+
+if (!container) return
+
+container.innerHTML = this.data.experience.map(job => `
 
 <div class="timeline-item">
 
@@ -218,11 +355,11 @@ exp.innerHTML=data.experience.map(job=>`
 
 <h4>${job.company}</h4>
 
-<p class="duration">${job.duration} | ${job.location}</p>
+<p class="duration">${job.duration}</p>
 
 <ul>
 
-${job.responsibilities.map(r=>`<li>${r}</li>`).join("")}
+${job.responsibilities.map(r => `<li>${r}</li>`).join("")}
 
 </ul>
 
@@ -232,31 +369,31 @@ ${job.responsibilities.map(r=>`<li>${r}</li>`).join("")}
 
 `).join("")
 
-}
+},
 
 
 
-/* PROJECTS */
+/* ================================
+PROJECTS
+================================ */
 
-const projects=document.getElementById("projectsContainer")
+renderProjects() {
 
-if(projects && data.projects){
+const container = document.getElementById("projectsContainer")
 
-projects.innerHTML=data.projects.map(p=>`
+if (!container) return
+
+container.innerHTML = this.data.projects.map(p => `
 
 <div class="project-card">
 
 <h3>${p.name}</h3>
 
-<p class="category">${p.category}</p>
-
 <p>${p.description}</p>
-
-<p class="impact">${p.impact}</p>
 
 <div class="tech">
 
-${p.technologies.map(t=>`<span>${t}</span>`).join("")}
+${p.technologies.map(t => `<span class="tech-badge">${t}</span>`).join("")}
 
 </div>
 
@@ -264,74 +401,132 @@ ${p.technologies.map(t=>`<span>${t}</span>`).join("")}
 
 `).join("")
 
-}
+},
 
 
 
-/* CERTIFICATIONS */
+/* ================================
+CERTIFICATIONS
+================================ */
 
-const cert=document.getElementById("certificationsContainer")
+renderCertifications() {
 
-if(cert && data.certifications){
+const container = document.getElementById("certificationsContainer")
 
-cert.innerHTML=data.certifications
-.map(c=>`<li>${c}</li>`)
+if (!container) return
+
+container.innerHTML = this.data.certifications
+
+.map(c => `<li>${c}</li>`)
+
 .join("")
 
-}
+},
 
 
 
-/* EDUCATION */
+/* ================================
+EDUCATION
+================================ */
 
-const edu=document.getElementById("educationContainer")
+renderEducation() {
 
-if(edu && data.education){
+const e = this.data.education
 
-edu.innerHTML=`
+const container = document.getElementById("educationContainer")
 
-<h3>${data.education.degree} — ${data.education.field}</h3>
+if (!container) return
 
-<p>${data.education.institution}</p>
+container.innerHTML = `
 
-<p>${data.education.location}</p>
+<h3>${e.degree}</h3>
 
-<p>${data.education.year}</p>
+<p>${e.institution}</p>
+
+<p>${e.year}</p>
 
 `
 
-}
+},
 
 
 
-/* ACHIEVEMENTS */
+/* ================================
+ACHIEVEMENTS
+================================ */
 
-const ach=document.getElementById("achievementsContainer")
+renderAchievements() {
 
-if(ach && data.achievements){
+const container = document.getElementById("achievementsContainer")
 
-ach.innerHTML=data.achievements
-.map(a=>`<li>${a}</li>`)
+if (!container) return
+
+container.innerHTML = this.data.achievements
+
+.map(a => `<li>${a}</li>`)
+
 .join("")
 
+},
+
+
+
+/* ================================
+MENTORSHIP / TRAINING
+================================ */
+
+renderTraining() {
+
+const container = document.getElementById("trainingContainer")
+
+if (!container || !this.data.training) return
+
+container.innerHTML = this.data.training.map(t => `
+
+<div class="training-card">
+
+<h3>${t.role}</h3>
+
+<h4>${t.organization}</h4>
+
+<p>${t.description}</p>
+
+</div>
+
+`).join("")
+
+},
+
+
+
+/* ================================
+FOOTER
+================================ */
+
+renderFooter() {
+
+const p = this.data.personal
+
+this.setText("footerName", p.name)
+
+this.setHref("footerLinkedin", p.linkedin)
+
+this.setHref("footerGithub", p.github)
+
+this.setHref("footerEmail", "mailto:" + p.email)
+
+}
+
 }
 
 
 
-/* FOOTER */
+/* =================================
+START APPLICATION
+================================ */
 
-setText("footerName",data.personal.name)
+document.addEventListener("DOMContentLoaded", () => {
 
-setHref("footerLinkedin",data.personal.linkedin)
+App.init()
 
-setHref("footerGithub",data.personal.github)
-
-setHref("footerEmail",data.personal.email)
-
-}
-
-
-
-/* INIT */
-
-document.addEventListener("DOMContentLoaded",loadPortfolio)
+})

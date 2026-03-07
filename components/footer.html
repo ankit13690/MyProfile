@@ -2,17 +2,17 @@
 
 <div class="footer-container">
 
-
 <!-- ABOUT -->
 
 <div class="footer-about">
 
-<h2 id="footerName"></h2>
+<h3 id="footerName">Shashi Kumar Singh</h3>
 
 <p>
 
-DevOps Engineer specializing in cloud infrastructure, automation,
-CI/CD pipelines, Kubernetes platforms and scalable distributed systems.
+DevOps & Platform Engineer specializing in cloud infrastructure,
+CI/CD automation, Kubernetes orchestration, and scalable
+distributed systems.
 
 </p>
 
@@ -20,18 +20,19 @@ CI/CD pipelines, Kubernetes platforms and scalable distributed systems.
 
 
 
-<!-- NAVIGATION -->
+<!-- QUICK LINKS -->
 
 <div class="footer-links">
 
-<h3>Navigation</h3>
+<h4>Navigation</h4>
 
 <a href="#home">Home</a>
+<a href="#summary">Summary</a>
 <a href="#skills">Skills</a>
-<a href="#pipeline">Pipeline</a>
+<a href="#tools">Tools</a>
 <a href="#experience">Experience</a>
 <a href="#projects">Projects</a>
-<a href="#architecture">Architecture</a>
+<a href="#contact">Contact</a>
 
 </div>
 
@@ -39,9 +40,9 @@ CI/CD pipelines, Kubernetes platforms and scalable distributed systems.
 
 <!-- CONTACT -->
 
-<div class="footer-contact">
+<div class="footer-links">
 
-<h3>Connect</h3>
+<h4>Connect</h4>
 
 <a id="footerLinkedin" target="_blank">LinkedIn</a>
 
@@ -49,22 +50,35 @@ CI/CD pipelines, Kubernetes platforms and scalable distributed systems.
 
 <a id="footerEmail">Email</a>
 
+<a id="footerWhatsapp" target="_blank">WhatsApp</a>
+
 </div>
 
 
+
 </div>
 
 
+
+<!-- BOTTOM -->
 
 <div class="footer-bottom">
 
 <p>
 
-© 2026 <span id="footerName"></span> — DevOps Engineer Portfolio
+© <span id="footerYear"></span> Shashi Kumar Singh • DevOps Engineer Portfolio
 
 </p>
 
 </div>
 
-
 </footer>
+
+
+
+<script>
+
+document.getElementById("footerYear").innerText =
+new Date().getFullYear()
+
+</script>

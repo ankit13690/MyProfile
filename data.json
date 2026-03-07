@@ -1,193 +1,272 @@
 {
   "personal": {
     "name": "Shashi Kumar Singh",
-    "title": "Lead DevOps Engineer | Platform Architect | Site Reliability Engineering Leader",
-    "tagline": "Designing scalable cloud infrastructure, developer platforms, and resilient distributed systems.",
+    "title": "Senior DevOps & Platform Engineer",
+    "tagline": "Designing scalable cloud infrastructure, DevOps automation platforms and Kubernetes ecosystems.",
     "location": "Gurugram, India",
-    "email": "mailto:shashi.gotit38@gmail.com",
-    "phone": "+91-7903286693",
-    "linkedin": "https://linkedin.com/in/shashi-kumar-singh-52984b127",
-    "github": "https://github.com/",
+
     "profileImage": "assets/profile.jpg",
-    "resume": "assets/resume.pdf"
+    "resume": "assets/resume.pdf",
+
+    "email": "shashi.gotit38@gmail.com",
+    "phone": "+917903286693",
+    "whatsapp": "https://wa.me/917903286693",
+
+    "linkedin": "https://linkedin.com/in/shashi-kumar-singh-52984b127",
+    "github": "https://github.com/shashisingh007"
   },
 
-  "summary": "Senior DevOps and Platform Engineering leader with over 7 years of experience designing scalable cloud infrastructure, Kubernetes platforms, and automated CI/CD systems. Proven track record of building Internal Developer Platforms, implementing GitOps workflows, and leading DevOps teams delivering highly reliable distributed systems across multi-cloud environments including AWS, GCP and Azure.",
+  "summary": "Senior DevOps Engineer with 7+ years of experience building scalable cloud infrastructure, CI/CD automation, Kubernetes platforms and high availability distributed systems. Specialized in AWS cloud architecture, infrastructure as code using Terraform, container orchestration with Kubernetes, observability platforms and automation using Python and Bash scripting. Proven experience improving deployment reliability, reducing operational overhead and enabling developer productivity through DevOps platform engineering.",
 
   "coreCompetencies": [
     "DevOps Engineering",
     "Platform Engineering",
-    "Site Reliability Engineering",
-    "Cloud Architecture",
+    "Cloud Infrastructure",
+    "CI/CD Automation",
     "Infrastructure as Code",
-    "Kubernetes Platform Design",
-    "GitOps Automation",
-    "CI/CD Pipeline Engineering",
-    "Hybrid Cloud Architecture",
-    "Observability Engineering",
-    "High Availability Systems",
-    "Developer Platform Enablement"
+    "Container Orchestration",
+    "Kubernetes Platform Engineering",
+    "Site Reliability Engineering",
+    "Observability Platforms",
+    "Cloud Security",
+    "Microservices Infrastructure",
+    "Distributed Systems"
+  ],
+
+  "companies": [
+    {
+      "name": "Adidas",
+      "logo": "assets/company/adidas.png"
+    },
+    {
+      "name": "FIS Global",
+      "logo": "assets/company/fis.png"
+    },
+    {
+      "name": "Intimetec",
+      "logo": "assets/company/intimetec.png"
+    },
+    {
+      "name": "CloudTechner",
+      "logo": "assets/company/cloudtechner.png"
+    }
   ],
 
   "skills": {
+
     "Cloud Platforms": [
-      "Amazon Web Services (AWS)",
-      "Google Cloud Platform (GCP)",
-      "Microsoft Azure",
-      "Hybrid Cloud Architecture",
-      "Cloud Landing Zones"
+      { "name": "Amazon Web Services (AWS)", "level": 5 },
+      { "name": "Microsoft Azure", "level": 4 },
+      { "name": "Google Cloud Platform", "level": 4 }
     ],
 
-    "Container & Orchestration": [
-      "Kubernetes",
-      "Amazon EKS",
-      "Google Kubernetes Engine (GKE)",
-      "Helm",
-      "Kubernetes Operators"
+    "AWS Services": [
+      { "name": "EC2", "level": 5 },
+      { "name": "S3", "level": 5 },
+      { "name": "RDS", "level": 5 },
+      { "name": "VPC", "level": 5 },
+      { "name": "IAM", "level": 5 },
+      { "name": "CloudWatch", "level": 4 },
+      { "name": "Route53", "level": 4 },
+      { "name": "Elastic Load Balancer", "level": 4 },
+      { "name": "EKS", "level": 5 },
+      { "name": "Lambda", "level": 3 }
+    ],
+
+    "Containers & Orchestration": [
+      { "name": "Docker", "level": 5 },
+      { "name": "Kubernetes", "level": 5 },
+      { "name": "Helm", "level": 4 },
+      { "name": "Containerd", "level": 3 }
     ],
 
     "Infrastructure as Code": [
-      "Terraform",
-      "Ansible",
-      "Crossplane",
-      "Pulumi"
+      { "name": "Terraform", "level": 5 },
+      { "name": "Ansible", "level": 4 },
+      { "name": "CloudFormation", "level": 3 }
     ],
 
-    "CI/CD & GitOps": [
-      "Jenkins",
-      "GitHub Actions",
-      "GitLab CI",
-      "ArgoCD",
-      "GitOps Workflows"
+    "CI/CD & Automation": [
+      { "name": "Jenkins", "level": 5 },
+      { "name": "GitHub Actions", "level": 5 },
+      { "name": "Azure DevOps Pipelines", "level": 4 },
+      { "name": "GitLab CI/CD", "level": 4 },
+      { "name": "ArgoCD", "level": 4 }
     ],
 
-    "Observability": [
-      "Prometheus",
-      "Grafana",
-      "ELK Stack",
-      "Datadog",
-      "Distributed Tracing"
+    "Monitoring & Observability": [
+      { "name": "Prometheus", "level": 5 },
+      { "name": "Grafana", "level": 5 },
+      { "name": "Zabbix", "level": 4 },
+      { "name": "ELK Stack", "level": 4 },
+      { "name": "Alertmanager", "level": 4 }
     ],
 
-    "Security & DevSecOps": [
-      "IAM",
-      "Policy as Code",
-      "Open Policy Agent (OPA)",
-      "Zero Trust Architecture",
-      "Web Application Firewall"
+    "Databases & Caching": [
+      { "name": "Redis", "level": 4 },
+      { "name": "MySQL", "level": 4 },
+      { "name": "PostgreSQL", "level": 4 }
     ],
 
-    "Programming Languages": [
-      "Python",
-      "Go",
-      "Bash",
-      "Groovy"
+    "Programming & Scripting": [
+      { "name": "Python", "level": 4 },
+      { "name": "Bash", "level": 5 },
+      { "name": "PowerShell", "level": 4 },
+      { "name": "Shell Scripting", "level": 5 }
     ],
 
-    "Reliability Engineering": [
-      "SLI/SLO Design",
-      "Chaos Engineering",
-      "Incident Response",
-      "Error Budgets",
-      "Reliability Automation"
+    "Networking": [
+      { "name": "TCP/IP Networking", "level": 4 },
+      { "name": "DNS", "level": 4 },
+      { "name": "Load Balancing", "level": 4 },
+      { "name": "Nginx", "level": 4 }
+    ],
+
+    "Security": [
+      { "name": "DevSecOps", "level": 4 },
+      { "name": "IAM Security Policies", "level": 4 },
+      { "name": "Secrets Management", "level": 4 }
+    ],
+
+    "Data Platforms": [
+      { "name": "Databricks", "level": 4 }
     ]
   },
 
   "experience": [
+
     {
       "company": "Adidas",
-      "role": "Lead Platform Architect & Team Lead",
+      "logo": "assets/company/adidas.png",
+      "role": "Senior DevOps Engineer",
       "duration": "Apr 2023 – Present",
       "location": "Gurugram, India",
       "responsibilities": [
-        "Led a cross-functional team of 8 DevOps and SRE engineers delivering enterprise cloud platform capabilities.",
-        "Architected Internal Developer Platform enabling self-service infrastructure provisioning.",
-        "Reduced developer environment provisioning time by 90% using automation.",
-        "Designed hybrid multi-cloud infrastructure across AWS and GCP supporting high traffic workloads.",
-        "Implemented self-healing infrastructure automation improving platform uptime to 99.99%.",
-        "Established architecture standards for scalable microservices infrastructure."
+        "Designed scalable Kubernetes infrastructure supporting microservices platforms.",
+        "Implemented CI/CD pipelines using Jenkins and GitHub Actions improving deployment efficiency.",
+        "Built infrastructure automation frameworks using Terraform.",
+        "Implemented centralized observability platform using Prometheus and Grafana.",
+        "Reduced deployment failures and improved platform reliability."
       ]
     },
 
     {
-      "company": "FIS Solutions",
-      "role": "Senior DevOps Engineer",
+      "company": "FIS Global",
+      "logo": "assets/company/fis.png",
+      "role": "DevOps Engineer",
       "duration": "Sep 2022 – Mar 2023",
       "location": "Gurugram, India",
       "responsibilities": [
-        "Led migration of legacy financial systems to Kubernetes based microservices architecture.",
-        "Designed secure CI/CD pipelines compliant with PCI-DSS security standards.",
-        "Implemented automated disaster recovery strategies ensuring business continuity.",
-        "Improved deployment reliability through containerization and Infrastructure as Code."
+        "Migrated financial systems infrastructure to AWS cloud platform.",
+        "Automated deployment pipelines for enterprise applications.",
+        "Implemented monitoring and logging solutions across production systems."
       ]
     },
 
     {
       "company": "Intimetec",
+      "logo": "assets/company/intimetec.png",
       "role": "Systems Engineer",
       "duration": "May 2021 – Sep 2022",
       "location": "Jaipur, India",
       "responsibilities": [
-        "Developed automation workflows using Python and Ansible.",
-        "Managed Linux server infrastructure supporting enterprise applications.",
-        "Automated configuration management improving operational efficiency."
+        "Developed infrastructure automation scripts using Python and Bash.",
+        "Maintained Linux infrastructure for production workloads.",
+        "Implemented monitoring systems to improve operational visibility."
+      ]
+    },
+
+    {
+      "company": "CloudTechner",
+      "logo": "assets/company/cloudtechner.png",
+      "role": "Cloud Engineering Trainee",
+      "duration": "2019 – 2020",
+      "location": "India",
+      "responsibilities": [
+        "Worked with AWS cloud infrastructure including EC2, VPC and S3.",
+        "Built small automation scripts for infrastructure provisioning.",
+        "Learned DevOps practices and cloud architecture fundamentals."
       ]
     }
+
   ],
 
   "projects": [
+
     {
-      "name": "Enterprise Internal Developer Platform",
-      "category": "Platform Engineering",
-      "technologies": ["Kubernetes", "Crossplane", "Backstage"],
-      "description": "Designed centralized developer platform providing self-service infrastructure provisioning for engineering teams.",
-      "impact": "Reduced infrastructure provisioning time by 90%."
+      "name": "Kubernetes Production Platform",
+      "category": "DevOps Platform",
+      "description": "Designed and deployed Kubernetes clusters supporting microservices applications.",
+      "impact": "Improved scalability and high availability of production services.",
+      "technologies": ["Kubernetes", "Docker", "Helm"]
     },
 
     {
-      "name": "Hybrid Multi-Cloud Landing Zone",
-      "category": "Cloud Architecture",
-      "technologies": ["Terraform", "AWS Control Tower", "Global Accelerator"],
-      "description": "Architected secure landing zone with governance policies and automated infrastructure provisioning.",
-      "impact": "Enabled scalable multi-region infrastructure across AWS and GCP."
+      "name": "Terraform Infrastructure Automation",
+      "category": "Infrastructure as Code",
+      "description": "Developed reusable Terraform modules for AWS infrastructure provisioning.",
+      "impact": "Reduced infrastructure deployment time by 60%.",
+      "technologies": ["Terraform", "AWS"]
     },
 
     {
-      "name": "Enterprise Observability Platform",
-      "category": "Site Reliability Engineering",
-      "technologies": ["Prometheus", "Grafana", "Chaos Mesh"],
-      "description": "Designed monitoring and observability platform implementing SLIs, SLOs and logging standards.",
-      "impact": "Improved incident debugging across 50+ microservices."
+      "name": "CI/CD Pipeline Automation",
+      "category": "DevOps",
+      "description": "Implemented automated CI/CD pipelines for application deployment.",
+      "impact": "Accelerated release cycles and reduced manual deployment effort.",
+      "technologies": ["Jenkins", "GitHub Actions", "Docker"]
     },
 
     {
-      "name": "GitOps CI/CD Transformation",
-      "category": "DevOps Automation",
-      "technologies": ["ArgoCD", "GitHub Actions", "Helm"],
-      "description": "Implemented automated GitOps pipelines enabling push-to-deploy workflows.",
-      "impact": "Increased deployment velocity by 300%."
+      "name": "Observability Monitoring Platform",
+      "category": "Monitoring",
+      "description": "Built centralized monitoring stack for microservices infrastructure.",
+      "impact": "Improved incident detection and debugging capabilities.",
+      "technologies": ["Prometheus", "Grafana", "ELK"]
+    },
+
+    {
+      "name": "Docker Microservices Platform",
+      "category": "Containers",
+      "description": "Containerized microservices applications for scalable deployments.",
+      "impact": "Improved deployment consistency and reliability.",
+      "technologies": ["Docker", "Nginx"]
+    },
+
+    {
+      "name": "Python Automation Framework",
+      "category": "Automation",
+      "description": "Developed Python automation scripts for infrastructure management tasks.",
+      "impact": "Reduced manual operations workload.",
+      "technologies": ["Python", "Bash"]
+    },
+
+    {
+      "name": "Databricks Data Platform",
+      "category": "Data Engineering",
+      "description": "Designed scalable data processing platform using Databricks.",
+      "impact": "Enabled large scale data processing pipelines.",
+      "technologies": ["Databricks", "Spark"]
     }
+
   ],
 
   "certifications": [
     "Certified Kubernetes Administrator (CKA)",
-    "AWS Certified Solutions Architect – Professional (Targeted)",
-    "Google Professional Cloud Architect (Targeted)",
-    "HashiCorp Certified: Terraform Associate"
+    "HashiCorp Terraform Associate",
+    "AWS Certified Solutions Architect (Targeted)"
   ],
 
   "education": {
-    "degree": "Bachelor of Technology",
-    "field": "Computer Science",
+    "degree": "B.Tech in Computer Science",
     "institution": "Global Institute of Technology",
-    "location": "Jaipur, India",
-    "year": "2020"
+    "location": "Jaipur",
+    "year": "2016 – 2020"
   },
 
   "achievements": [
-    "Leadership Excellence Award at Adidas for successful data center migration.",
-    "Architectural Innovation Award for designing self-service cloud platform.",
-    "Reliability Champion for improving uptime to 99.999%.",
-    "Mentored junior engineers to technical leadership roles."
+    "Improved platform uptime to 99.99% reliability.",
+    "Automated infrastructure deployments reducing manual operations.",
+    "Built scalable DevOps platforms used across engineering teams."
   ]
 }

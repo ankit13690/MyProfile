@@ -6,14 +6,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Shashi Kumar Singh | DevOps Engineer</title>
+<title>Shashi Kumar Singh | DevOps & Platform Engineer</title>
 
 <link rel="stylesheet" href="style.css">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css"/>
 
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 
 </head>
@@ -21,21 +22,17 @@
 
 <body>
 
-<!-- PARTICLES BACKGROUND -->
-
+<!-- Animated Background -->
 <div id="particles-js"></div>
 
-
-
 <!-- HEADER -->
-
 <div id="header"></div>
 
 
 
-<!-- HERO -->
+<!-- HERO SECTION -->
 
-<section id="home" class="hero">
+<section id="home" class="hero" data-aos="fade-down">
 
 <div class="hero-container">
 
@@ -44,7 +41,6 @@
 <img id="profileImage" class="profile-image">
 
 </div>
-
 
 <div class="hero-right">
 
@@ -68,6 +64,10 @@ LinkedIn
 GitHub
 </a>
 
+<a id="whatsappBtn" class="btn-secondary" target="_blank">
+WhatsApp
+</a>
+
 </div>
 
 </div>
@@ -78,9 +78,33 @@ GitHub
 
 
 
+<!-- CONTACT BAR -->
+
+<section class="contact-bar">
+
+<div class="contact-container">
+
+<div class="contact-item">
+📧 <span id="emailText"></span>
+</div>
+
+<div class="contact-item">
+📱 <span id="phoneText"></span>
+</div>
+
+<div class="contact-item">
+📍 <span id="locationText"></span>
+</div>
+
+</div>
+
+</section>
+
+
+
 <!-- SUMMARY -->
 
-<section id="summary" class="section">
+<section id="summary" class="section" data-aos="fade-up">
 
 <h2 class="section-title">Professional Summary</h2>
 
@@ -92,7 +116,7 @@ GitHub
 
 <!-- CORE COMPETENCIES -->
 
-<section id="competencies" class="section">
+<section id="competencies" class="section" data-aos="zoom-in">
 
 <h2 class="section-title">Core Competencies</h2>
 
@@ -104,7 +128,7 @@ GitHub
 
 <!-- SKILLS -->
 
-<section id="skills" class="section">
+<section id="skills" class="section" data-aos="fade-up">
 
 <h2 class="section-title">Technical Skills</h2>
 
@@ -114,7 +138,19 @@ GitHub
 
 
 
-<!-- DEVOPS PIPELINE VISUALIZATION -->
+<!-- DEVOPS TOOLS -->
+
+<section id="tools" class="section" data-aos="zoom-in">
+
+<h2 class="section-title">DevOps Tool Ecosystem</h2>
+
+<div id="toolsContainer" class="tools-grid"></div>
+
+</section>
+
+
+
+<!-- DEVOPS PIPELINE -->
 
 <section id="pipeline" class="section">
 
@@ -122,20 +158,16 @@ GitHub
 
 <div class="pipeline-container">
 
-<div class="pipeline-step">GitHub</div>
-
+<div class="pipeline-step">Source Control</div>
 <div class="pipeline-arrow">→</div>
 
-<div class="pipeline-step">Jenkins</div>
-
+<div class="pipeline-step">CI/CD</div>
 <div class="pipeline-arrow">→</div>
 
 <div class="pipeline-step">Docker</div>
-
 <div class="pipeline-arrow">→</div>
 
 <div class="pipeline-step">Kubernetes</div>
-
 <div class="pipeline-arrow">→</div>
 
 <div class="pipeline-step">Monitoring</div>
@@ -148,7 +180,7 @@ GitHub
 
 <!-- EXPERIENCE -->
 
-<section id="experience" class="section">
+<section id="experience" class="section" data-aos="fade-right">
 
 <h2 class="section-title">Professional Experience</h2>
 
@@ -160,9 +192,9 @@ GitHub
 
 <!-- PROJECTS -->
 
-<section id="projects" class="section">
+<section id="projects" class="section" data-aos="fade-up">
 
-<h2 class="section-title">Projects</h2>
+<h2 class="section-title">Engineering Projects</h2>
 
 <div id="projectsContainer" class="projects"></div>
 
@@ -172,36 +204,35 @@ GitHub
 
 <!-- ARCHITECTURE -->
 
-<section id="architecture" class="section">
+<section id="architecture" class="section" data-aos="zoom-in">
 
-<h2 class="section-title">DevOps Architecture</h2>
+<h2 class="section-title">Cloud & DevOps Architecture</h2>
 
 <div class="architecture-grid">
 
 <div class="architecture-card">
 
-<h3>AWS Infrastructure</h3>
+<h3>Cloud Infrastructure</h3>
 
 <img src="assets/architecture/aws.png" class="architecture-image">
 
 <p>
 
-Production-ready AWS infrastructure using Terraform and Kubernetes.
+Highly available AWS architecture built using Terraform and Kubernetes.
 
 </p>
 
 </div>
 
-
 <div class="architecture-card">
 
-<h3>CI/CD Pipeline</h3>
+<h3>CI/CD Platform</h3>
 
 <img src="assets/architecture/cicd.png" class="architecture-image">
 
 <p>
 
-Automated pipeline with GitHub, Jenkins and Kubernetes deployment.
+Automated delivery pipeline integrating GitHub, Jenkins, Docker and Kubernetes.
 
 </p>
 
@@ -213,11 +244,11 @@ Automated pipeline with GitHub, Jenkins and Kubernetes deployment.
 
 
 
-<!-- GITHUB GRAPH -->
+<!-- GITHUB ACTIVITY -->
 
-<section id="github" class="section">
+<section id="github" class="section" data-aos="fade-up">
 
-<h2 class="section-title">GitHub Activity</h2>
+<h2 class="section-title">GitHub Contribution Activity</h2>
 
 <div class="github-graph">
 
@@ -265,6 +296,51 @@ Automated pipeline with GitHub, Jenkins and Kubernetes deployment.
 
 
 
+<!-- MENTORSHIP -->
+
+<section id="mentoring" class="section">
+
+<h2 class="section-title">Mentorship & Training</h2>
+
+<div id="trainingContainer"></div>
+
+</section>
+
+
+
+<!-- CONTACT CTA -->
+
+<section id="contact" class="section contact-section">
+
+<h2 class="section-title">Let's Connect</h2>
+
+<p>
+
+If you are building scalable cloud platforms, DevOps automation or distributed systems —  
+I would love to collaborate.
+
+</p>
+
+<div class="contact-buttons">
+
+<a id="contactEmailBtn" class="btn-primary">
+Email
+</a>
+
+<a id="contactLinkedinBtn" class="btn-secondary" target="_blank">
+LinkedIn
+</a>
+
+<a id="contactGithubBtn" class="btn-secondary" target="_blank">
+GitHub
+</a>
+
+</div>
+
+</section>
+
+
+
 <!-- FOOTER -->
 
 <div id="footer"></div>
@@ -274,13 +350,19 @@ Automated pipeline with GitHub, Jenkins and Kubernetes deployment.
 <script src="script.js"></script>
 
 
+
 <script>
+
+AOS.init({
+duration:1000,
+once:true
+})
 
 particlesJS("particles-js",{
 
 particles:{
 
-number:{value:50},
+number:{value:80},
 
 color:{value:"#38bdf8"},
 
@@ -309,7 +391,5 @@ speed:2
 
 </script>
 
-
 </body>
-
 </html>
