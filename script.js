@@ -2,23 +2,20 @@ const App = {
 
 data:null,
 
-/* ======================================================
-APPLICATION INIT
-====================================================== */
-
 init: async function(){
 
 this.consoleBanner()
 
 await this.loadComponents()
-
 await this.loadData()
 
 this.renderAll()
 
 this.initializeInteractions()
-
 this.initializeCursorGlow()
+this.initializeScrollEffects()
+this.initializeNavbarEffects()
+this.initializeHeroParallax()
 
 setTimeout(()=>{
 
@@ -27,30 +24,23 @@ this.initializePipelineAnimation()
 this.initializeJourneyAnimation()
 this.initializeToolAnimations()
 this.initialize3DHovers()
-this.initializeScrollEffects()
 
 },300)
 
 },
 
-/* ======================================================
-CONSOLE BANNER
-====================================================== */
+/* =============================== */
 
 consoleBanner(){
 
 console.log(
-
 "%c DevOps Portfolio Platform Loaded ",
 "background:#38bdf8;color:#020617;font-weight:bold;padding:8px;border-radius:6px"
-
 )
 
 },
 
-/* ======================================================
-LOAD COMPONENTS
-====================================================== */
+/* =============================== */
 
 loadComponents: async function(){
 
@@ -68,7 +58,6 @@ loadComponent: async function(id,file){
 try{
 
 const res=await fetch(file)
-
 const html=await res.text()
 
 const el=document.getElementById(id)
@@ -83,19 +72,14 @@ console.error("Component load error:",file)
 
 },
 
-/* ======================================================
-LOAD DATA
-====================================================== */
+/* =============================== */
 
 loadData: async function(){
 
 try{
 
 const res=await fetch("data.json")
-
 this.data=await res.json()
-
-console.log("Portfolio data loaded")
 
 }catch(e){
 
@@ -105,9 +89,7 @@ console.error("Failed loading data.json")
 
 },
 
-/* ======================================================
-RENDER ALL
-====================================================== */
+/* =============================== */
 
 renderAll(){
 
@@ -139,14 +121,11 @@ this.renderGitHubActivity()
 
 },
 
-/* ======================================================
-UTILITY HELPERS
-====================================================== */
+/* =============================== */
 
 setText(id,value){
 
 const el=document.getElementById(id)
-
 if(el) el.innerText=value
 
 },
@@ -154,7 +133,6 @@ if(el) el.innerText=value
 setHref(id,value){
 
 const el=document.getElementById(id)
-
 if(el) el.href=value
 
 },
@@ -162,7 +140,6 @@ if(el) el.href=value
 setSrc(id,value){
 
 const el=document.getElementById(id)
-
 if(el) el.src=value
 
 },
@@ -181,9 +158,7 @@ return stars
 
 },
 
-/* ======================================================
-HERO
-====================================================== */
+/* =============================== */
 
 renderHero(){
 
@@ -196,16 +171,13 @@ this.setText("tagline",p.tagline)
 this.setSrc("profileImage",p.profileImage)
 
 this.setHref("downloadResume",p.resume)
-
 this.setHref("linkedinBtn",p.linkedin)
 this.setHref("githubBtn",p.github)
 this.setHref("whatsappBtn",p.whatsapp)
 
 },
 
-/* ======================================================
-HEADER LINKS
-====================================================== */
+/* =============================== */
 
 renderHeaderLinks(){
 
@@ -223,9 +195,7 @@ this.setText("headerLocation",p.location)
 
 },
 
-/* ======================================================
-FOOTER LINKS
-====================================================== */
+/* =============================== */
 
 renderFooterLinks(){
 
@@ -246,9 +216,7 @@ this.setText("footerEmailText",p.email)
 
 },
 
-/* ======================================================
-METRICS
-====================================================== */
+/* =============================== */
 
 renderMetrics(){
 
@@ -270,9 +238,7 @@ container.innerHTML=this.data.metrics.map(m=>`
 
 },
 
-/* ======================================================
-CONTACT BAR
-====================================================== */
+/* =============================== */
 
 renderContact(){
 
@@ -288,9 +254,7 @@ this.setHref("contactGithubBtn",p.github)
 
 },
 
-/* ======================================================
-SUMMARY
-====================================================== */
+/* =============================== */
 
 renderSummary(){
 
@@ -298,9 +262,7 @@ this.setText("summaryText",this.data.summary)
 
 },
 
-/* ======================================================
-COMPETENCIES
-====================================================== */
+/* =============================== */
 
 renderCompetencies(){
 
@@ -314,9 +276,7 @@ container.innerHTML=this.data.coreCompetencies
 
 },
 
-/* ======================================================
-SKILLS
-====================================================== */
+/* =============================== */
 
 renderSkills(){
 
@@ -354,9 +314,7 @@ container.innerHTML=html
 
 },
 
-/* ======================================================
-TOOLS
-====================================================== */
+/* =============================== */
 
 renderTools(){
 
@@ -400,105 +358,7 @@ onerror="this.src='assets/tools/default.png'"
 
 },
 
-/* ======================================================
-COMPANY JOURNEY
-====================================================== */
-
-renderCompanies(){
-
-const container=document.getElementById("companyJourney")
-
-if(!container || !this.data.companies) return
-
-container.innerHTML=this.data.companies.map((c,i)=>`
-
-<div class="company-node">
-
-<img src="${c.logo}" class="company-icon">
-
-<p>${c.name}</p>
-
-</div>
-
-${i < this.data.companies.length-1 ? `<div class="company-route-line"></div>` : ""}
-
-`).join("")
-
-},
-
-/* ======================================================
-EXPERIENCE
-====================================================== */
-
-renderExperience(){
-
-const container=document.getElementById("experienceContainer")
-
-if(!container) return
-
-container.innerHTML=this.data.experience.map(job=>`
-
-<div class="experience-card">
-
-<div class="experience-header">
-
-<img src="${job.logo}" class="company-logo">
-
-<div>
-
-<h3>${job.role}</h3>
-<h4>${job.company}</h4>
-<p class="duration">${job.duration}</p>
-
-</div>
-
-</div>
-
-<ul>
-
-${job.responsibilities.map(r=>`<li>${r}</li>`).join("")}
-
-</ul>
-
-</div>
-
-`).join("")
-
-},
-
-/* ======================================================
-PROJECTS
-====================================================== */
-
-renderProjects(){
-
-const container=document.getElementById("projectsContainer")
-
-if(!container) return
-
-container.innerHTML=this.data.projects.map(p=>`
-
-<div class="project-card">
-
-<h3>${p.name}</h3>
-
-<p>${p.description}</p>
-
-<div class="tech">
-
-${p.technologies.map(t=>`<span class="tech-badge">${t}</span>`).join("")}
-
-</div>
-
-</div>
-
-`).join("")
-
-},
-
-/* ======================================================
-METRIC COUNTER
-====================================================== */
+/* =============================== */
 
 initializeAnimations(){
 
@@ -507,19 +367,15 @@ const counters=document.querySelectorAll(".metric-number")
 counters.forEach(counter=>{
 
 const target=+counter.dataset.value
-
 let count=0
-
-const increment = target/100
 
 const update=()=>{
 
-count+=increment
+count+=Math.ceil(target/80)
 
 if(count<target){
 
-counter.innerText=Math.floor(count)
-
+counter.innerText=count
 requestAnimationFrame(update)
 
 }else{
@@ -536,9 +392,7 @@ update()
 
 },
 
-/* ======================================================
-PIPELINE ANIMATION
-====================================================== */
+/* =============================== */
 
 initializePipelineAnimation(){
 
@@ -550,15 +404,13 @@ setTimeout(()=>{
 
 node.classList.add("pipeline-active")
 
-},i*400)
+},i*350)
 
 })
 
 },
 
-/* ======================================================
-CAREER JOURNEY
-====================================================== */
+/* =============================== */
 
 initializeJourneyAnimation(){
 
@@ -570,15 +422,13 @@ setTimeout(()=>{
 
 node.classList.add("journey-visible")
 
-},i*500)
+},i*450)
 
 })
 
 },
 
-/* ======================================================
-TOOLS ANIMATION
-====================================================== */
+/* =============================== */
 
 initializeToolAnimations(){
 
@@ -596,23 +446,21 @@ tool.classList.add("tool-visible")
 
 },
 
-/* ======================================================
-3D HOVER EFFECT
-====================================================== */
+/* =============================== */
 
 initialize3DHovers(){
 
-document.querySelectorAll(".tool-card, .project-card, .experience-card").forEach(card=>{
+document.querySelectorAll(".tool-card,.project-card,.experience-card").forEach(card=>{
 
 card.addEventListener("mousemove",e=>{
 
-const rect = card.getBoundingClientRect()
+const rect=card.getBoundingClientRect()
 
-const x = e.clientX - rect.left
-const y = e.clientY - rect.top
+const x=e.clientX-rect.left
+const y=e.clientY-rect.top
 
-card.style.transform = `rotateX(${-(y-rect.height/2)/12}deg)
-rotateY(${(x-rect.width/2)/12}deg)
+card.style.transform=`rotateX(${-(y-rect.height/2)/10}deg)
+rotateY(${(x-rect.width/2)/10}deg)
 scale(1.05)`
 
 })
@@ -627,13 +475,11 @@ card.style.transform="rotateX(0) rotateY(0)"
 
 },
 
-/* ======================================================
-SCROLL EFFECTS
-====================================================== */
+/* =============================== */
 
 initializeScrollEffects(){
 
-const elements=document.querySelectorAll(".section")
+const sections=document.querySelectorAll(".section")
 
 const observer=new IntersectionObserver(entries=>{
 
@@ -649,13 +495,54 @@ entry.target.classList.add("section-visible")
 
 },{threshold:0.15})
 
-elements.forEach(el=>observer.observe(el))
+sections.forEach(sec=>observer.observe(sec))
 
 },
 
-/* ======================================================
-CURSOR GLOW
-====================================================== */
+/* =============================== */
+
+initializeNavbarEffects(){
+
+window.addEventListener("scroll",()=>{
+
+const header=document.querySelector(".header")
+
+if(!header) return
+
+if(window.scrollY>80){
+
+header.classList.add("header-scrolled")
+
+}else{
+
+header.classList.remove("header-scrolled")
+
+}
+
+})
+
+},
+
+/* =============================== */
+
+initializeHeroParallax(){
+
+window.addEventListener("mousemove",e=>{
+
+const hero=document.querySelector(".hero")
+
+if(!hero) return
+
+const x=(window.innerWidth/2-e.clientX)/40
+const y=(window.innerHeight/2-e.clientY)/40
+
+hero.style.transform=`translate(${x}px,${y}px)`
+
+})
+
+},
+
+/* =============================== */
 
 initializeCursorGlow(){
 
@@ -675,10 +562,6 @@ glow.style.top=e.clientY+"px"
 }
 
 }
-
-/* ======================================================
-START APP
-====================================================== */
 
 document.addEventListener("DOMContentLoaded",()=>{
 
