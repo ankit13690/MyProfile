@@ -17,13 +17,13 @@
 
 <body>
 
+<!-- GLOBAL BACKGROUND VIDEO -->
 
-<!-- GLOBAL PAGE TRANSITION -->
-<div id="pageTransition"></div>
+<video autoplay muted loop id="bgVideo">
+<source src="https://cdn.coverr.co/videos/coverr-cloud-computing-network-5174/1080p.mp4" type="video/mp4">
+</video>
 
-
-<!-- DEVOPS ANIMATED BACKGROUND -->
-<canvas id="devopsBackground"></canvas>
+<div class="overlay"></div>
 
 
 
@@ -32,30 +32,28 @@
 
 
 
-<!-- HERO SECTION -->
+<!-- HERO -->
 
-<section id="home" class="hero-section">
+<section id="home" class="hero">
 
 <div class="hero-container">
 
-<div class="hero-image">
+<div class="hero-left">
 
-<img id="profileImage" src="" alt="profile">
+<img id="profileImage" class="profile-image">
 
 </div>
 
 
-<div class="hero-content">
+<div class="hero-right">
 
 <h1 id="heroName"></h1>
 
-<h2 class="typing-container">
-<span id="heroTitle"></span>
-</h2>
+<h2 id="heroTitle"></h2>
 
 <p id="heroTagline"></p>
 
-<div id="metricsContainer" class="metrics-grid"></div>
+<div id="metricsContainer" class="metrics"></div>
 
 </div>
 
@@ -65,106 +63,142 @@
 
 
 
-<!-- ABOUT -->
+<!-- TOOLS -->
 
-<section id="about" class="about-section">
-
-<h2 class="section-title">About</h2>
-
-<p id="summaryText" class="about-text"></p>
-
-</section>
-
-
-
-<!-- DEVOPS TOOLS -->
-
-<section id="tools" class="tools-section">
+<section id="tools">
 
 <h2 class="section-title">DevOps Tools</h2>
 
-<div id="toolsGrid" class="tools-grid">
+<div class="tools-grid">
 
 
 <div class="tool-card">
+
 <img src="assets/tools/aws.png">
-<span>AWS</span>
+<p>AWS</p>
+
 </div>
 
+
 <div class="tool-card">
+
 <img src="assets/tools/docker.png">
-<span>Docker</span>
+<p>Docker</p>
+
 </div>
 
+
 <div class="tool-card">
+
 <img src="assets/tools/kubernetes.png">
-<span>Kubernetes</span>
+<p>Kubernetes</p>
+
 </div>
 
+
 <div class="tool-card">
+
 <img src="assets/tools/terraform.png">
-<span>Terraform</span>
+<p>Terraform</p>
+
 </div>
 
+
 <div class="tool-card">
+
 <img src="assets/tools/jenkins.png">
-<span>Jenkins</span>
+<p>Jenkins</p>
+
 </div>
 
+
 <div class="tool-card">
+
 <img src="assets/tools/github-actions.png">
-<span>GitHub Actions</span>
+<p>GitHub Actions</p>
+
 </div>
 
+
 <div class="tool-card">
+
 <img src="assets/tools/ansible.png">
-<span>Ansible</span>
+<p>Ansible</p>
+
 </div>
 
+
 <div class="tool-card">
+
 <img src="assets/tools/prometheus.png">
-<span>Prometheus</span>
+<p>Prometheus</p>
+
 </div>
 
+
 <div class="tool-card">
+
 <img src="assets/tools/grafana.png">
-<span>Grafana</span>
+<p>Grafana</p>
+
 </div>
 
+
 <div class="tool-card">
+
 <img src="assets/tools/python.png">
-<span>Python</span>
+<p>Python</p>
+
 </div>
 
+
 <div class="tool-card">
+
 <img src="assets/tools/bash.png">
-<span>Bash</span>
+<p>Bash</p>
+
 </div>
 
+
 <div class="tool-card">
+
 <img src="assets/tools/mysql.png">
-<span>MySQL</span>
+<p>MySQL</p>
+
 </div>
 
+
 <div class="tool-card">
+
 <img src="assets/tools/redis.png">
-<span>Redis</span>
+<p>Redis</p>
+
 </div>
 
+
 <div class="tool-card">
+
 <img src="assets/tools/databricks.png">
-<span>Databricks</span>
+<p>Databricks</p>
+
 </div>
 
+
 <div class="tool-card">
+
 <img src="assets/tools/helm.png">
-<span>Helm</span>
+<p>Helm</p>
+
 </div>
 
+
 <div class="tool-card">
+
 <img src="assets/tools/elk.png">
-<span>ELK Stack</span>
+<p>ELK Stack</p>
+
 </div>
+
 
 </div>
 
@@ -174,7 +208,7 @@
 
 <!-- SKILLS -->
 
-<section id="skills" class="skills-section">
+<section id="skills">
 
 <h2 class="section-title">Skills</h2>
 
@@ -186,7 +220,7 @@
 
 <!-- COMPANIES -->
 
-<section id="companies" class="companies-section">
+<section id="companies">
 
 <h2 class="section-title">Companies</h2>
 
@@ -198,11 +232,11 @@
 
 <!-- EXPERIENCE -->
 
-<section id="experience" class="experience-section">
+<section id="experience">
 
 <h2 class="section-title">Experience</h2>
 
-<div id="experienceContainer" class="experience-timeline"></div>
+<div id="experienceContainer"></div>
 
 </section>
 
@@ -210,33 +244,11 @@
 
 <!-- PROJECTS -->
 
-<section id="projects" class="projects-section">
+<section id="projects">
 
 <h2 class="section-title">Projects</h2>
 
-<div id="projectsContainer" class="projects-grid"></div>
-
-</section>
-
-
-
-<!-- ARCHITECTURE -->
-
-<section id="architecture" class="architecture-section">
-
-<h2 class="section-title">Architecture</h2>
-
-<div class="architecture-grid">
-
-<div class="architecture-card">
-<img src="assets/architecture/aws-architecture.png">
-</div>
-
-<div class="architecture-card">
-<img src="assets/architecture/cicd-pipeline.png">
-</div>
-
-</div>
+<div id="projectsContainer"></div>
 
 </section>
 
@@ -244,21 +256,18 @@
 
 <!-- CONTACT -->
 
-<section id="contact" class="contact-section">
+<section id="contact">
 
 <h2 class="section-title">Contact</h2>
 
-<p class="contact-text">
-
-Feel free to reach out for collaborations, consulting or DevOps mentoring.
-
-</p>
+<p>Feel free to reach out for collaborations or DevOps consulting.</p>
 
 </section>
 
 
 
 <!-- FOOTER -->
+
 <div id="footer"></div>
 
 
