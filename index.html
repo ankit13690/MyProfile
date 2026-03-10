@@ -10,50 +10,52 @@
 
 <link rel="stylesheet" href="style.css">
 
-<!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 </head>
 
 
-
 <body>
 
 
-
-<!-- 3D BACKGROUND -->
-<div id="background-animation"></div>
-
+<!-- GLOBAL PAGE TRANSITION -->
+<div id="pageTransition"></div>
 
 
-<!-- HEADER LOAD -->
+<!-- DEVOPS ANIMATED BACKGROUND -->
+<canvas id="devopsBackground"></canvas>
+
+
+
+<!-- HEADER -->
 <div id="header"></div>
 
 
 
 <!-- HERO SECTION -->
 
-<section id="home" class="hero">
+<section id="home" class="hero-section">
 
 <div class="hero-container">
 
-<div class="hero-left">
+<div class="hero-image">
 
-<img id="profileImage" class="profile-image" src="" alt="profile">
+<img id="profileImage" src="" alt="profile">
 
 </div>
 
 
-<div class="hero-right">
+<div class="hero-content">
 
 <h1 id="heroName"></h1>
 
-<h2 id="heroTitle"></h2>
+<h2 class="typing-container">
+<span id="heroTitle"></span>
+</h2>
 
 <p id="heroTagline"></p>
 
-
-<div id="metricsContainer" class="metrics"></div>
+<div id="metricsContainer" class="metrics-grid"></div>
 
 </div>
 
@@ -65,52 +67,104 @@
 
 <!-- ABOUT -->
 
-<section id="about" class="about">
+<section id="about" class="about-section">
 
-<h2 class="section-title">About Me</h2>
+<h2 class="section-title">About</h2>
 
-<p id="summaryText"></p>
-
-</section>
-
-
-
-<!-- SKILLS -->
-
-<section id="skills" class="skills">
-
-<h2 class="section-title">Skills</h2>
-
-<div id="skillsContainer"></div>
+<p id="summaryText" class="about-text"></p>
 
 </section>
 
 
 
-<!-- TOOLS -->
+<!-- DEVOPS TOOLS -->
 
-<section id="tools" class="tools">
+<section id="tools" class="tools-section">
 
 <h2 class="section-title">DevOps Tools</h2>
 
-<div class="tools-grid">
+<div id="toolsGrid" class="tools-grid">
 
+
+<div class="tool-card">
 <img src="assets/tools/aws.png">
+<span>AWS</span>
+</div>
+
+<div class="tool-card">
 <img src="assets/tools/docker.png">
+<span>Docker</span>
+</div>
+
+<div class="tool-card">
 <img src="assets/tools/kubernetes.png">
+<span>Kubernetes</span>
+</div>
+
+<div class="tool-card">
 <img src="assets/tools/terraform.png">
+<span>Terraform</span>
+</div>
+
+<div class="tool-card">
 <img src="assets/tools/jenkins.png">
+<span>Jenkins</span>
+</div>
+
+<div class="tool-card">
 <img src="assets/tools/github-actions.png">
+<span>GitHub Actions</span>
+</div>
+
+<div class="tool-card">
 <img src="assets/tools/ansible.png">
+<span>Ansible</span>
+</div>
+
+<div class="tool-card">
 <img src="assets/tools/prometheus.png">
+<span>Prometheus</span>
+</div>
+
+<div class="tool-card">
 <img src="assets/tools/grafana.png">
+<span>Grafana</span>
+</div>
+
+<div class="tool-card">
 <img src="assets/tools/python.png">
+<span>Python</span>
+</div>
+
+<div class="tool-card">
 <img src="assets/tools/bash.png">
+<span>Bash</span>
+</div>
+
+<div class="tool-card">
 <img src="assets/tools/mysql.png">
+<span>MySQL</span>
+</div>
+
+<div class="tool-card">
 <img src="assets/tools/redis.png">
+<span>Redis</span>
+</div>
+
+<div class="tool-card">
 <img src="assets/tools/databricks.png">
+<span>Databricks</span>
+</div>
+
+<div class="tool-card">
 <img src="assets/tools/helm.png">
+<span>Helm</span>
+</div>
+
+<div class="tool-card">
 <img src="assets/tools/elk.png">
+<span>ELK Stack</span>
+</div>
 
 </div>
 
@@ -118,9 +172,21 @@
 
 
 
+<!-- SKILLS -->
+
+<section id="skills" class="skills-section">
+
+<h2 class="section-title">Skills</h2>
+
+<div id="skillsContainer" class="skills-grid"></div>
+
+</section>
+
+
+
 <!-- COMPANIES -->
 
-<section id="companies" class="companies">
+<section id="companies" class="companies-section">
 
 <h2 class="section-title">Companies</h2>
 
@@ -132,11 +198,11 @@
 
 <!-- EXPERIENCE -->
 
-<section id="experience" class="experience">
+<section id="experience" class="experience-section">
 
 <h2 class="section-title">Experience</h2>
 
-<div id="experienceContainer"></div>
+<div id="experienceContainer" class="experience-timeline"></div>
 
 </section>
 
@@ -144,11 +210,11 @@
 
 <!-- PROJECTS -->
 
-<section id="projects" class="projects">
+<section id="projects" class="projects-section">
 
 <h2 class="section-title">Projects</h2>
 
-<div id="projectsContainer"></div>
+<div id="projectsContainer" class="projects-grid"></div>
 
 </section>
 
@@ -156,14 +222,19 @@
 
 <!-- ARCHITECTURE -->
 
-<section id="architecture" class="architecture">
+<section id="architecture" class="architecture-section">
 
 <h2 class="section-title">Architecture</h2>
 
 <div class="architecture-grid">
 
+<div class="architecture-card">
 <img src="assets/architecture/aws-architecture.png">
+</div>
+
+<div class="architecture-card">
 <img src="assets/architecture/cicd-pipeline.png">
+</div>
 
 </div>
 
@@ -173,17 +244,21 @@
 
 <!-- CONTACT -->
 
-<section id="contact" class="contact">
+<section id="contact" class="contact-section">
 
 <h2 class="section-title">Contact</h2>
 
-<p>Feel free to reach out for collaborations, consulting or DevOps mentoring.</p>
+<p class="contact-text">
+
+Feel free to reach out for collaborations, consulting or DevOps mentoring.
+
+</p>
 
 </section>
 
 
 
-<!-- FOOTER LOAD -->
+<!-- FOOTER -->
 <div id="footer"></div>
 
 
