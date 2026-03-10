@@ -1,142 +1,92 @@
 <header class="header">
 
-<div class="navbar">
+<div class="nav-container">
 
-<!-- ========================================
-LEFT : NAME + ROLE
-======================================== -->
+    <!-- LOGO -->
+    <div class="logo">
+        <span class="logo-name">Shashi</span>
+        <span class="logo-role">DevOps</span>
+    </div>
 
-<div class="navbar-left">
 
-<div class="logo">
+    <!-- NAVIGATION -->
+    <nav class="nav-menu">
 
-<span id="headerName" class="logo-text"></span>
+        <a href="#home" class="nav-link">
+            <span>Home</span>
+        </a>
 
-</div>
+        <a href="#about" class="nav-link">
+            <span>About</span>
+        </a>
 
-<div class="role-badge">
+        <a href="#skills" class="nav-link">
+            <span>Skills</span>
+        </a>
 
-<span class="status-dot"></span>
+        <a href="#experience" class="nav-link">
+            <span>Experience</span>
+        </a>
 
-<span class="role-text">
-Senior DevOps • Platform Engineer • SRE
-</span>
+        <a href="#projects" class="nav-link">
+            <span>Projects</span>
+        </a>
 
-</div>
+        <a href="#contact" class="nav-link">
+            <span>Contact</span>
+        </a>
 
-</div>
+    </nav>
 
-<!-- ========================================
-CENTER : NAVIGATION
-======================================== -->
 
-<nav class="nav">
 
-<ul class="nav-links">
+    <!-- CONTACT ICONS (DYNAMICALLY FILLED FROM JSON) -->
+    <div class="header-contacts">
 
-<li><a href="#home">Home</a></li>
+        <a id="emailLink" class="contact-icon">
+            <img src="assets/icons/email.png" alt="email">
+        </a>
 
-<li><a href="#summary">Summary</a></li>
+        <a id="phoneLink" class="contact-icon">
+            <img src="assets/icons/phone.png" alt="phone">
+        </a>
 
-<li><a href="#skills">Skills</a></li>
+        <a id="whatsappLink" class="contact-icon">
+            <img src="assets/icons/whatsapp.png" alt="whatsapp">
+        </a>
 
-<li><a href="#tools">Tools</a></li>
+        <a id="linkedinLink" class="contact-icon">
+            <img src="assets/icons/linkedin.png" alt="linkedin">
+        </a>
 
-<li><a href="#pipeline">Pipeline</a></li>
+        <a id="githubLink" class="contact-icon">
+            <img src="assets/icons/github.png" alt="github">
+        </a>
 
-<li><a href="#career">Journey</a></li>
+    </div>
 
-<li><a href="#experience">Experience</a></li>
 
-<li><a href="#projects">Projects</a></li>
 
-<li><a href="#contact">Contact</a></li>
+    <!-- RESUME BUTTON -->
+    <div class="resume-container">
 
-</ul>
+        <a id="resumeBtn"
+           class="resume-btn"
+           download>
 
-</nav>
+           Download Resume
 
-<!-- ========================================
-RIGHT : CONTACT + SOCIAL
-======================================== -->
+        </a>
 
-<div class="navbar-right">
+    </div>
 
-<!-- CONTACT INFO -->
 
-<div class="header-contact">
-
-<div class="header-contact-item">
-
-<img src="assets/icons/email.png" class="header-icon">
-
-<a id="headerEmail"></a>
-
-</div>
-
-<div class="header-contact-item">
-
-<img src="assets/icons/phone.png" class="header-icon">
-
-<span id="headerPhone"></span>
-
-</div>
-
-<div class="header-contact-item">
-
-<img src="assets/icons/location.png" class="header-icon">
-
-<span id="headerLocation"></span>
-
-</div>
-
-</div>
-
-<!-- DEVOPS STATUS -->
-
-<div class="devops-status">
-
-<span class="status-dot"></span>
-
-<span class="status-text">
-Infrastructure Operational
-</span>
-
-</div>
-
-<!-- SOCIAL LINKS -->
-
-<div class="header-social">
-
-<a id="headerLinkedin" target="_blank">
-
-<img src="assets/icons/linkedin.png">
-
-</a>
-
-<a id="headerGithub" target="_blank">
-
-<img src="assets/icons/github.png">
-
-</a>
-
-<a id="headerWhatsapp" target="_blank">
-
-<img src="assets/icons/whatsapp.png">
-
-</a>
-
-</div>
-
-<!-- CTA -->
-
-<a href="#contact" class="header-cta">
-
-Let's Connect
-
-</a>
-
-</div>
+    <!-- MOBILE MENU -->
+    <div class="mobile-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
 
 </div>
 

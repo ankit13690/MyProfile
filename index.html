@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
@@ -7,37 +6,32 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Shashi Kumar Singh | Senior DevOps Engineer</title>
-
-<meta name="description" content="Senior DevOps & Platform Engineer specializing in Kubernetes, Terraform, CI/CD automation and scalable cloud infrastructure">
+<title>Shashi Kumar Singh | DevOps Engineer</title>
 
 <link rel="stylesheet" href="style.css">
 
+<!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 
 </head>
 
+
+
 <body>
 
-<!-- =====================================================
-GLOBAL BACKGROUND
-===================================================== -->
 
-<div id="particles-js"></div>
-<div class="background-grid"></div>
-<div class="background-glow"></div>
 
-<!-- =====================================================
-HEADER
-===================================================== -->
+<!-- 3D BACKGROUND -->
+<div id="background-animation"></div>
 
+
+
+<!-- HEADER LOAD -->
 <div id="header"></div>
 
-<!-- =====================================================
-HERO
-===================================================== -->
+
+
+<!-- HERO SECTION -->
 
 <section id="home" class="hero">
 
@@ -45,402 +39,156 @@ HERO
 
 <div class="hero-left">
 
-<div class="profile-wrapper">
-
-<img id="profileImage" class="profile-image">
-
-<div class="profile-glow"></div>
+<img id="profileImage" class="profile-image" src="" alt="profile">
 
 </div>
 
-</div>
 
 <div class="hero-right">
 
-<h1 id="name"></h1>
+<h1 id="heroName"></h1>
 
-<h2 id="title"></h2>
+<h2 id="heroTitle"></h2>
 
-<p id="tagline"></p>
+<p id="heroTagline"></p>
 
-<div class="hero-buttons">
 
-<a id="downloadResume" class="btn-primary">
-Download Resume
-</a>
-
-<a id="linkedinBtn" class="btn-outline" target="_blank">
-LinkedIn
-</a>
-
-<a id="githubBtn" class="btn-outline" target="_blank">
-GitHub
-</a>
-
-<a id="whatsappBtn" class="btn-outline" target="_blank">
-WhatsApp
-</a>
+<div id="metricsContainer" class="metrics"></div>
 
 </div>
 
 </div>
 
-</div>
+</section>
 
-<!-- Floating DevOps Icons -->
 
-<div class="floating-tools">
 
+<!-- ABOUT -->
+
+<section id="about" class="about">
+
+<h2 class="section-title">About Me</h2>
+
+<p id="summaryText"></p>
+
+</section>
+
+
+
+<!-- SKILLS -->
+
+<section id="skills" class="skills">
+
+<h2 class="section-title">Skills</h2>
+
+<div id="skillsContainer"></div>
+
+</section>
+
+
+
+<!-- TOOLS -->
+
+<section id="tools" class="tools">
+
+<h2 class="section-title">DevOps Tools</h2>
+
+<div class="tools-grid">
+
+<img src="assets/tools/aws.png">
 <img src="assets/tools/docker.png">
 <img src="assets/tools/kubernetes.png">
 <img src="assets/tools/terraform.png">
-<img src="assets/tools/aws.png">
 <img src="assets/tools/jenkins.png">
+<img src="assets/tools/github-actions.png">
+<img src="assets/tools/ansible.png">
+<img src="assets/tools/prometheus.png">
+<img src="assets/tools/grafana.png">
+<img src="assets/tools/python.png">
+<img src="assets/tools/bash.png">
+<img src="assets/tools/mysql.png">
+<img src="assets/tools/redis.png">
+<img src="assets/tools/databricks.png">
+<img src="assets/tools/helm.png">
+<img src="assets/tools/elk.png">
 
 </div>
 
 </section>
 
-<!-- =====================================================
-ENGINEERING METRICS
-===================================================== -->
 
-<section class="metrics-section">
 
-<div class="metrics-container"></div>
+<!-- COMPANIES -->
 
-</section>
+<section id="companies" class="companies">
 
-<!-- =====================================================
-CONTACT STRIP
-===================================================== -->
+<h2 class="section-title">Companies</h2>
 
-<section class="contact-strip">
-
-<div class="contact-strip-container">
-
-<div class="contact-item">
-
-<img src="assets/icons/email.png">
-
-<span id="emailText"></span>
-
-</div>
-
-<div class="contact-item">
-
-<img src="assets/icons/phone.png">
-
-<span id="phoneText"></span>
-
-</div>
-
-<div class="contact-item">
-
-<img src="assets/icons/location.png">
-
-<span id="locationText"></span>
-
-</div>
-
-</div>
+<div id="companiesContainer" class="company-grid"></div>
 
 </section>
 
-<!-- =====================================================
-PROFESSIONAL SUMMARY
-===================================================== -->
 
-<section id="summary" class="section">
 
-<h2 class="section-title">Professional Summary</h2>
+<!-- EXPERIENCE -->
 
-<p id="summaryText" class="summary"></p>
+<section id="experience" class="experience">
 
-</section>
+<h2 class="section-title">Experience</h2>
 
-<!-- =====================================================
-CORE COMPETENCIES
-===================================================== -->
-
-<section id="competencies" class="section">
-
-<h2 class="section-title">Core Competencies</h2>
-
-<div id="competenciesContainer" class="competencies-grid"></div>
+<div id="experienceContainer"></div>
 
 </section>
 
-<!-- =====================================================
-TECHNICAL SKILLS
-===================================================== -->
 
-<section id="skills" class="section">
 
-<h2 class="section-title">Technical Skills</h2>
+<!-- PROJECTS -->
 
-<div id="skillsContainer" class="skills-grid"></div>
+<section id="projects" class="projects">
 
-</section>
+<h2 class="section-title">Projects</h2>
 
-<!-- =====================================================
-DEVOPS TOOL ECOSYSTEM
-===================================================== -->
-
-<section id="tools" class="section tools-section">
-
-<h2 class="section-title">DevOps Tool Ecosystem</h2>
-
-<div id="toolsContainer" class="tools-grid"></div>
+<div id="projectsContainer"></div>
 
 </section>
 
-<!-- =====================================================
-DEVOPS PIPELINE
-===================================================== -->
 
-<section id="pipeline" class="section pipeline-section">
 
-<h2 class="section-title">DevOps Delivery Pipeline</h2>
+<!-- ARCHITECTURE -->
 
-<div class="pipeline-flow">
+<section id="architecture" class="architecture">
 
-<div class="pipeline-node">Source</div>
-<div class="pipeline-line"></div>
-
-<div class="pipeline-node">Build</div>
-<div class="pipeline-line"></div>
-
-<div class="pipeline-node">CI/CD</div>
-<div class="pipeline-line"></div>
-
-<div class="pipeline-node">Docker</div>
-<div class="pipeline-line"></div>
-
-<div class="pipeline-node">Kubernetes</div>
-<div class="pipeline-line"></div>
-
-<div class="pipeline-node">Observability</div>
-
-</div>
-
-</section>
-
-<!-- =====================================================
-ENGINEERING JOURNEY
-===================================================== -->
-
-<section id="career" class="section">
-
-<h2 class="section-title">Engineering Journey</h2>
-
-<div id="companyJourney" class="journey-route"></div>
-
-</section>
-
-<!-- =====================================================
-PROFESSIONAL EXPERIENCE
-===================================================== -->
-
-<section id="experience" class="section">
-
-<h2 class="section-title">Professional Experience</h2>
-
-<div id="experienceContainer" class="experience-grid"></div>
-
-</section>
-
-<!-- =====================================================
-PROJECTS
-===================================================== -->
-
-<section id="projects" class="section">
-
-<h2 class="section-title">Engineering Projects</h2>
-
-<div id="projectsContainer" class="projects-grid"></div>
-
-</section>
-
-<!-- =====================================================
-ARCHITECTURE
-===================================================== -->
-
-<section id="architecture" class="section">
-
-<h2 class="section-title">Cloud Platform Architecture</h2>
+<h2 class="section-title">Architecture</h2>
 
 <div class="architecture-grid">
 
-<div class="architecture-card">
-
-<h3>AWS Infrastructure</h3>
-
-<img src="assets/architecture/aws.png">
-
-<p>
-
-Highly available AWS infrastructure using Terraform,
-Kubernetes and CI/CD automation.
-
-</p>
-
-</div>
-
-<div class="architecture-card">
-
-<h3>CI/CD Platform</h3>
-
-<img src="assets/architecture/cicd.png">
-
-<p>
-
-Enterprise CI/CD automation integrating GitHub Actions,
-Jenkins and Kubernetes.
-
-</p>
-
-</div>
+<img src="assets/architecture/aws-architecture.png">
+<img src="assets/architecture/cicd-pipeline.png">
 
 </div>
 
 </section>
 
-<!-- =====================================================
-GITHUB CONTRIBUTIONS
-===================================================== -->
 
-<section id="github" class="section">
 
-<h2 class="section-title">GitHub Activity</h2>
+<!-- CONTACT -->
 
-<div class="github-graph">
+<section id="contact" class="contact">
 
-<img>
+<h2 class="section-title">Contact</h2>
 
-</div>
+<p>Feel free to reach out for collaborations, consulting or DevOps mentoring.</p>
 
 </section>
 
-<!-- =====================================================
-CERTIFICATIONS
-===================================================== -->
 
-<section id="certifications" class="section">
 
-<h2 class="section-title">Certifications</h2>
-
-<ul id="certificationsContainer"></ul>
-
-</section>
-
-<!-- =====================================================
-EDUCATION
-===================================================== -->
-
-<section id="education" class="section">
-
-<h2 class="section-title">Education</h2>
-
-<div id="educationContainer"></div>
-
-</section>
-
-<!-- =====================================================
-ACHIEVEMENTS
-===================================================== -->
-
-<section id="achievements" class="section">
-
-<h2 class="section-title">Achievements</h2>
-
-<ul id="achievementsContainer"></ul>
-
-</section>
-
-<!-- =====================================================
-TRAINING
-===================================================== -->
-
-<section id="training" class="section">
-
-<h2 class="section-title">Mentorship & Training</h2>
-
-<div id="trainingContainer"></div>
-
-</section>
-
-<!-- =====================================================
-CONTACT
-===================================================== -->
-
-<section id="contact" class="section contact-section">
-
-<h2 class="section-title">Let's Connect</h2>
-
-<p class="contact-text">
-
-If you are building scalable cloud platforms,
-DevOps automation or distributed systems —
-I would love to collaborate.
-
-</p>
-
-<div class="contact-buttons">
-
-<a id="contactEmailBtn" class="btn-primary">Email</a>
-
-<a id="contactLinkedinBtn" class="btn-outline">LinkedIn</a>
-
-<a id="contactGithubBtn" class="btn-outline">GitHub</a>
-
-<a id="whatsappBtn" class="btn-outline">WhatsApp</a>
-
-</div>
-
-</section>
-
-<!-- =====================================================
-FOOTER
-===================================================== -->
-
+<!-- FOOTER LOAD -->
 <div id="footer"></div>
 
-<!-- =====================================================
-SCRIPTS
-===================================================== -->
+
 
 <script src="script.js"></script>
-
-<script>
-
-particlesJS("particles-js",{
-
-particles:{
-number:{value:90},
-color:{value:"#38bdf8"},
-shape:{type:"circle"},
-opacity:{value:0.25},
-size:{value:3},
-
-line_linked:{
-enable:true,
-distance:150,
-color:"#38bdf8",
-opacity:0.25,
-width:1
-},
-
-move:{
-enable:true,
-speed:2
-}
-
-}
-
-})
-
-</script>
 
 </body>
 </html>

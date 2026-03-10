@@ -1,527 +1,268 @@
-const App = {
+// LOAD HEADER AND FOOTER
 
-data:null,
+async function loadComponents(){
 
-/* ================================
-INIT
-================================ */
+const header = await fetch("components/header.html")
+.then(res=>res.text())
 
-init: async function(){
+document.getElementById("header").innerHTML = header
 
-await this.loadComponents()
 
-await this.loadData()
+const footer = await fetch("components/footer.html")
+.then(res=>res.text())
 
-this.renderAll()
-
-this.initializeAnimations()
-
-},
-
-/* ================================
-LOAD HEADER + FOOTER
-================================ */
-
-loadComponents: async function(){
-
-await Promise.all([
-
-this.loadComponent("header","components/header.html"),
-this.loadComponent("footer","components/footer.html")
-
-])
-
-},
-
-loadComponent: async function(id,file){
-
-try{
-
-const res=await fetch(file)
-
-const html=await res.text()
-
-const el=document.getElementById(id)
-
-if(el) el.innerHTML=html
-
-}catch(e){
-
-console.error("Failed loading component:",file)
+document.getElementById("footer").innerHTML = footer
 
 }
 
-},
+loadComponents()
 
-/* ================================
-LOAD DATA.JSON
-================================ */
 
-loadData: async function(){
 
-try{
+// LOAD DATA.JSON
 
-const res=await fetch("data.json")
+async function loadData(){
 
-this.data=await res.json()
+const response = await fetch("data.json")
+const data = await response.json()
 
-}catch(e){
+renderHero(data)
+renderMetrics(data.metrics)
+renderSkills(data.skills)
+renderCompanies(data.companies)
+renderExperience(data.experience)
+renderProjects(data.projects)
 
-console.error("Failed loading data.json")
-
-}
-
-},
-
-/* ================================
-RENDER ALL
-================================ */
-
-renderAll(){
-
-if(!this.data) return
-
-this.renderHero()
-
-this.renderHeader()
-
-this.renderFooter()
-
-this.renderMetrics()
-
-this.renderSummary()
-
-this.renderCompetencies()
-
-this.renderSkills()
-
-this.renderTools()
-
-this.renderExperience()
-
-this.renderProjects()
-
-this.renderContact()
-
-},
-
-/* ================================
-HELPERS
-================================ */
-
-setText(id,value){
-
-const el=document.getElementById(id)
-
-if(el) el.innerText=value
-
-},
-
-setHref(id,value){
-
-const el=document.getElementById(id)
-
-if(el) el.href=value
-
-},
-
-setSrc(id,value){
-
-const el=document.getElementById(id)
-
-if(el) el.src=value
-
-},
-
-stars(level){
-
-let stars=""
-
-for(let i=1;i<=5;i++){
-
-stars+= i<=level ? "★":"☆"
+setContactLinks(data.personal)
 
 }
 
-return stars
+loadData()
 
-},
 
-/* ================================
-HERO
-================================ */
 
-renderHero(){
+// HERO SECTION
 
-const p=this.data.personal
+function renderHero(data){
 
-this.setText("name",p.name)
+document.getElementById("profileImage").src = data.personal.profileImage
+document.getElementById("heroName").innerText = data.personal.name
+document.getElementById("heroTitle").innerText = data.personal.title
+document.getElementById("heroTagline").innerText = data.personal.tagline
+document.getElementById("summaryText").innerText = data.summary
 
-this.setText("title",p.title)
+}
 
-this.setText("tagline",p.tagline)
 
-this.setSrc("profileImage",p.profileImage)
 
-this.setHref("downloadResume",p.resume)
+// METRICS
 
-this.setHref("linkedinBtn",p.linkedin)
+function renderMetrics(metrics){
 
-this.setHref("githubBtn",p.github)
+const container = document.getElementById("metricsContainer")
 
-this.setHref("whatsappBtn",p.whatsapp)
+metrics.forEach(m=>{
 
-},
+const div = document.createElement("div")
+div.className = "metric"
 
-/* ================================
-HEADER
-================================ */
-
-renderHeader(){
-
-const p=this.data.personal
-
-this.setText("headerName",p.name)
-
-this.setHref("headerLinkedin",p.linkedin)
-
-this.setHref("headerGithub",p.github)
-
-this.setHref("headerWhatsapp",p.whatsapp)
-
-this.setHref("headerEmail","mailto:"+p.email)
-
-this.setText("headerPhone",p.phone)
-
-this.setText("headerLocation",p.location)
-
-},
-
-/* ================================
-FOOTER
-================================ */
-
-renderFooter(){
-
-const p=this.data.personal
-
-this.setText("footerName",p.name)
-
-this.setText("footerNameBottom",p.name)
-
-this.setHref("footerLinkedin",p.linkedin)
-
-this.setHref("footerGithub",p.github)
-
-this.setHref("footerWhatsapp",p.whatsapp)
-
-this.setHref("footerEmail","mailto:"+p.email)
-
-this.setText("footerEmailText",p.email)
-
-this.setText("footerPhone",p.phone)
-
-},
-
-/* ================================
-METRICS
-================================ */
-
-renderMetrics(){
-
-const container=document.querySelector(".metrics-container")
-
-if(!container) return
-
-container.innerHTML=this.data.metrics.map(m=>`
-
-<div class="metric">
-
-<h3 class="metric-number" data-value="${m.value.replace('+','')}">0</h3>
-
-<p>${m.label}</p>
-
-</div>
-
-`).join("")
-
-},
-
-/* ================================
-SUMMARY
-================================ */
-
-renderSummary(){
-
-this.setText("summaryText",this.data.summary)
-
-},
-
-/* ================================
-COMPETENCIES
-================================ */
-
-renderCompetencies(){
-
-const container=document.getElementById("competenciesContainer")
-
-if(!container) return
-
-container.innerHTML=this.data.coreCompetencies
-
-.map(c=>`<span class="competency">${c}</span>`)
-
-.join("")
-
-},
-
-/* ================================
-SKILLS
-================================ */
-
-renderSkills(){
-
-const container=document.getElementById("skillsContainer")
-
-if(!container) return
-
-let html=""
-
-for(const category in this.data.skills){
-
-html+=`<div class="skill-card"><h3>${category}</h3>`
-
-this.data.skills[category].forEach(skill=>{
-
-html+=`
-
-<div class="skill">
-
-<span>${skill.name}</span>
-
-<span class="skill-stars">${this.stars(skill.level)}</span>
-
-</div>
-
+div.innerHTML = `
+<div class="metric-value">${m.value}</div>
+<div class="metric-label">${m.label}</div>
 `
+
+container.appendChild(div)
 
 })
 
-html+=`</div>`
-
 }
 
-container.innerHTML=html
 
-},
 
-/* ================================
-TOOLS
-================================ */
+// SKILLS
 
-renderTools(){
+function renderSkills(skills){
 
-const container=document.getElementById("toolsContainer")
+const container = document.getElementById("skillsContainer")
 
-if(!container) return
+Object.keys(skills).forEach(category=>{
 
-let tools=[]
+const card = document.createElement("div")
+card.className = "skill-card"
 
-for(const cat in this.data.skills){
+let items = ""
 
-this.data.skills[cat].forEach(s=>tools.push(s.name))
+skills[category].forEach(skill=>{
 
-}
+items += `<li>${skill.name}</li>`
 
-tools=[...new Set(tools)]
+})
 
-container.innerHTML=tools.map(t=>{
-
-const icon=t.toLowerCase().replace(/\s/g,"-")
-
-return`
-
-<div class="tool-card">
-
-<img
-src="assets/tools/${icon}.png"
-alt="${t}"
-onerror="this.src='assets/tools/default.png'"
-
->
-
-<span>${t}</span>
-
-</div>
-
+card.innerHTML = `
+<h3>${category}</h3>
+<ul>${items}</ul>
 `
 
-}).join("")
+container.appendChild(card)
 
-},
+})
 
-/* ================================
-EXPERIENCE
-================================ */
+}
 
-renderExperience(){
 
-const container=document.getElementById("experienceContainer")
 
-if(!container) return
+// COMPANIES
 
-container.innerHTML=this.data.experience.map(job=>`
+function renderCompanies(companies){
 
-<div class="experience-card">
+const container = document.getElementById("companiesContainer")
 
-<h3>${job.role}</h3>
+companies.forEach(c=>{
 
-<h4>${job.company}</h4>
+const div = document.createElement("div")
+div.className = "company-card"
 
-<p class="duration">${job.duration}</p>
+div.innerHTML = `
+<img src="${c.logo}">
+<h3>${c.name}</h3>
+<p>${c.industry}</p>
+`
 
-<ul>
+container.appendChild(div)
 
-${job.responsibilities.map(r=>`<li>${r}</li>`).join("")}
+})
 
-</ul>
+}
 
-</div>
 
-`).join("")
 
-},
+// EXPERIENCE
 
-/* ================================
-PROJECTS
-================================ */
+function renderExperience(exp){
 
-renderProjects(){
+const container = document.getElementById("experienceContainer")
 
-const container=document.getElementById("projectsContainer")
+exp.forEach(e=>{
 
-if(!container) return
+const div = document.createElement("div")
+div.className = "experience-card"
 
-container.innerHTML=this.data.projects.map(p=>`
+let resp = ""
 
-<div class="project-card">
+e.responsibilities.forEach(r=>{
 
+resp += `<li>${r}</li>`
+
+})
+
+div.innerHTML = `
+<h3>${e.role}</h3>
+<h4>${e.company}</h4>
+<p>${e.duration} • ${e.location}</p>
+<ul>${resp}</ul>
+`
+
+container.appendChild(div)
+
+})
+
+}
+
+
+
+// PROJECTS
+
+function renderProjects(projects){
+
+const container = document.getElementById("projectsContainer")
+
+projects.forEach(p=>{
+
+const div = document.createElement("div")
+div.className = "project-card"
+
+let tech = p.technologies.join(", ")
+
+div.innerHTML = `
 <h3>${p.name}</h3>
-
 <p>${p.description}</p>
+<p><b>Impact:</b> ${p.impact}</p>
+<p><b>Tech:</b> ${tech}</p>
+`
 
-<div class="tech">
+container.appendChild(div)
 
-${p.technologies.map(t=>`<span class="tech-badge">${t}</span>`).join("")}
+})
 
-</div>
+}
 
-</div>
 
-`).join("")
 
-},
+// CONTACT LINKS
 
-/* ================================
-CONTACT
-================================ */
+function setContactLinks(personal){
 
-renderContact(){
+setTimeout(()=>{
 
-const p=this.data.personal
+document.getElementById("emailLink").href = `mailto:${personal.email}`
+document.getElementById("phoneLink").href = `tel:${personal.phone}`
+document.getElementById("whatsappLink").href = personal.whatsapp
+document.getElementById("linkedinLink").href = personal.linkedin
+document.getElementById("githubLink").href = personal.github
+document.getElementById("resumeBtn").href = personal.resume
 
-this.setHref("contactEmailBtn","mailto:"+p.email)
 
-this.setHref("contactLinkedinBtn",p.linkedin)
+document.getElementById("footerEmail").href = `mailto:${personal.email}`
+document.getElementById("footerPhone").href = `tel:${personal.phone}`
+document.getElementById("footerWhatsapp").href = personal.whatsapp
+document.getElementById("footerLinkedin").href = personal.linkedin
+document.getElementById("footerGithub").href = personal.github
+document.getElementById("footerResume").href = personal.resume
 
-this.setHref("contactGithubBtn",p.github)
+document.getElementById("footerLocationText").innerText = personal.location
 
-},
+},500)
 
-/* ================================
-ANIMATIONS
-================================ */
+}
 
-initializeAnimations(){
 
-this.animateMetrics()
 
-this.initialize3DHovers()
+// SCROLL BUTTON
 
-},
+window.addEventListener("scroll",()=>{
 
-animateMetrics(){
+const btn = document.getElementById("scrollTop")
 
-const counters=document.querySelectorAll(".metric-number")
+if(!btn) return
 
-counters.forEach(counter=>{
-
-const target=+counter.dataset.value
-
-let count=0
-
-const update=()=>{
-
-count+=Math.ceil(target/80)
-
-if(count<target){
-
-counter.innerText=count
-
-requestAnimationFrame(update)
-
+if(window.scrollY>500){
+btn.style.display="block"
 }else{
-
-counter.innerText=target
-
+btn.style.display="none"
 }
 
+})
+
+
+
+document.addEventListener("click",(e)=>{
+
+if(e.target.id==="scrollTop"){
+window.scrollTo({top:0,behavior:"smooth"})
 }
 
-update()
-
 })
 
-},
 
-initialize3DHovers(){
 
-document.querySelectorAll(".tool-card,.project-card,.experience-card")
+// FOOTER YEAR
 
-.forEach(card=>{
+setTimeout(()=>{
 
-card.addEventListener("mousemove",e=>{
+const year = document.getElementById("year")
 
-const rect=card.getBoundingClientRect()
-
-const x=e.clientX-rect.left
-
-const y=e.clientY-rect.top
-
-card.style.transform=`rotateX(${-(y-rect.height/2)/10}deg)
-rotateY(${(x-rect.width/2)/10}deg)
-scale(1.05)`
-
-})
-
-card.addEventListener("mouseleave",()=>{
-
-card.style.transform="rotateX(0) rotateY(0)"
-
-})
-
-})
-
+if(year){
+year.innerText = new Date().getFullYear()
 }
 
-}
-
-/* ================================
-START APP
-================================ */
-
-document.addEventListener("DOMContentLoaded",()=>{
-
-App.init()
-
-})
+},500)
