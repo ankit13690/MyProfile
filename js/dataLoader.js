@@ -14,7 +14,12 @@ const tools = [
 {name:"GitHub Actions",icon:"assets/tools/github-actions.png",class:"tool-github"},
 {name:"Ansible",icon:"assets/tools/ansible.png",class:"tool-ansible"},
 {name:"Prometheus",icon:"assets/tools/prometheus.png",class:"tool-monitor"},
-{name:"Grafana",icon:"assets/tools/grafana.png",class:"tool-monitor"}
+{name:"Grafana",icon:"assets/tools/grafana.png",class:"tool-monitor"},
+{name:"Helm",icon:"assets/tools/helm.png",class:"tool-kubernetes"},
+{name:"Redis",icon:"assets/tools/redis.png",class:"tool-monitor"},
+{name:"MySQL",icon:"assets/tools/mysql.png",class:"tool-monitor"},
+{name:"Python",icon:"assets/tools/python.png",class:"tool-monitor"},
+{name:"Bash",icon:"assets/tools/bash.png",class:"tool-monitor"}
 
 ]
 

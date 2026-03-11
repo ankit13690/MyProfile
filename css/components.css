@@ -325,3 +325,86 @@ background-image:url("https://media.giphy.com/media/xT9IgzoKnwFNmISR8I/giphy.gif
 .tool-monitor::before{
 background-image:url("https://media.giphy.com/media/ZVik7pBtu9dNS/giphy.gif");
 }
+
+/* =========================
+BOX GIF BACKGROUNDS
+========================= */
+
+.project-card,
+.company-card,
+.skills-card,
+.experience-card {
+
+position:relative;
+overflow:hidden;
+
+}
+
+.project-card::before,
+.company-card::before,
+.skills-card::before,
+.experience-card::before {
+
+content:"";
+
+position:absolute;
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+background-size:cover;
+background-position:center;
+
+opacity:0.15;
+
+z-index:0;
+
+}
+
+.project-card *,
+.company-card *,
+.skills-card *,
+.experience-card *{
+
+position:relative;
+z-index:1;
+
+}
+
+.company-card:nth-child(1)::before{
+background-image:url("https://media.giphy.com/media/l0HlNQ03J5JxX6lva/giphy.gif");
+}
+
+.company-card:nth-child(2)::before{
+background-image:url("https://media.giphy.com/media/xT0GqFqU2VqvF2oF6U/giphy.gif");
+}
+
+.company-card:nth-child(3)::before{
+background-image:url("https://media.giphy.com/media/3o7TKsQ8UQF9K7K7Tq/giphy.gif");
+}
+
+.company-card:nth-child(4)::before{
+background-image:url("https://media.giphy.com/media/xT9IgzoKnwFNmISR8I/giphy.gif");
+}
+
+.skills-card:nth-child(1)::before{
+background-image:url("https://media.giphy.com/media/coxQHKASG60HrHtvkt/giphy.gif");
+}
+
+.skills-card:nth-child(2)::before{
+background-image:url("https://media.giphy.com/media/13HgwGsXF0aiGY/giphy.gif");
+}
+
+.skills-card:nth-child(3)::before{
+background-image:url("https://media.giphy.com/media/3o7TKtnuHOHHUjR38Y/giphy.gif");
+}
+
+.skills-card:nth-child(4)::before{
+background-image:url("https://media.giphy.com/media/ZVik7pBtu9dNS/giphy.gif");
+}
+
+.experience-card::before{
+background-image:url("https://media.giphy.com/media/l41YtZOb9EUABnuqA/giphy.gif");
+}
