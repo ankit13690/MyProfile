@@ -27,7 +27,7 @@ canvas.style.left = "0"
 canvas.style.width = "100%"
 canvas.style.height = "100%"
 canvas.style.pointerEvents = "none"
-canvas.style.zIndex = "-2"
+canvas.style.zIndex = "-4"
 
 document.body.appendChild(canvas)
 
@@ -50,7 +50,7 @@ window.addEventListener("resize", resizeCanvas)
 
 const nodes = []
 
-const NODE_COUNT = 70
+const NODE_COUNT = 80
 
 for(let i=0;i<NODE_COUNT;i++){
 
@@ -59,8 +59,8 @@ nodes.push({
 x:Math.random()*canvas.width,
 y:Math.random()*canvas.height,
 
-vx:(Math.random()-0.5)*0.4,
-vy:(Math.random()-0.5)*0.4,
+vx:(Math.random()-0.5)*0.35,
+vy:(Math.random()-0.5)*0.35,
 
 size:Math.random()*2+1
 
@@ -95,7 +95,7 @@ node.y,
 0,
 node.x,
 node.y,
-8
+10
 
 )
 
@@ -119,9 +119,9 @@ const dy = node.y-other.y
 
 const distance = Math.sqrt(dx*dx + dy*dy)
 
-if(distance < 130){
+if(distance < 140){
 
-ctx.strokeStyle = "rgba(56,189,248,0.12)"
+ctx.strokeStyle = "rgba(56,189,248,0.10)"
 
 ctx.beginPath()
 ctx.moveTo(node.x,node.y)
@@ -183,7 +183,7 @@ window.addEventListener("resize", resizeCanvas)
 
 const flows = []
 
-const FLOW_COUNT = 30
+const FLOW_COUNT = 35
 
 for(let i=0;i<FLOW_COUNT;i++){
 
@@ -192,9 +192,9 @@ flows.push({
 x:Math.random()*canvas.width,
 y:Math.random()*canvas.height,
 
-length:Math.random()*50+30,
+length:Math.random()*60+40,
 
-speed:Math.random()*1.5+0.5
+speed:Math.random()*1.6+0.4
 
 })
 
@@ -220,7 +220,7 @@ flow.y
 )
 
 gradient.addColorStop(0,"rgba(56,189,248,0)")
-gradient.addColorStop(0.5,"rgba(56,189,248,0.15)")
+gradient.addColorStop(0.5,"rgba(56,189,248,0.20)")
 gradient.addColorStop(1,"rgba(56,189,248,0)")
 
 ctx.strokeStyle = gradient
