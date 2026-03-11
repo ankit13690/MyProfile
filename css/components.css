@@ -373,20 +373,40 @@ z-index:1;
 
 }
 
+/* =========================
+COMPANY SPECIFIC GIFS
+========================= */
+
+/* Adidas - Sports */
+
 .company-card:nth-child(1)::before{
-background-image:url("https://media.giphy.com/media/l0HlNQ03J5JxX6lva/giphy.gif");
+
+background-image:url("https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif");
+
 }
+
+/* FIS Global - Finance */
 
 .company-card:nth-child(2)::before{
-background-image:url("https://media.giphy.com/media/xT0GqFqU2VqvF2oF6U/giphy.gif");
+
+background-image:url("https://media.giphy.com/media/l41lFw057lAJQMwg0/giphy.gif");
+
 }
+
+/* Intimetec - Technology */
 
 .company-card:nth-child(3)::before{
-background-image:url("https://media.giphy.com/media/3o7TKsQ8UQF9K7K7Tq/giphy.gif");
+
+background-image:url("https://media.giphy.com/media/coxQHKASG60HrHtvkt/giphy.gif");
+
 }
 
+/* CloudTechner - Cloud */
+
 .company-card:nth-child(4)::before{
-background-image:url("https://media.giphy.com/media/xT9IgzoKnwFNmISR8I/giphy.gif");
+
+background-image:url("https://media.giphy.com/media/3o7TKsQ8UQF9K7K7Tq/giphy.gif");
+
 }
 
 .skills-card:nth-child(1)::before{
@@ -405,6 +425,75 @@ background-image:url("https://media.giphy.com/media/3o7TKtnuHOHHUjR38Y/giphy.gif
 background-image:url("https://media.giphy.com/media/ZVik7pBtu9dNS/giphy.gif");
 }
 
-.experience-card::before{
-background-image:url("https://media.giphy.com/media/l41YtZOb9EUABnuqA/giphy.gif");
+/* =========================
+EXPERIENCE GIFS
+========================= */
+
+/* Senior DevOps */
+
+.experience-card:nth-child(1)::before{
+
+background-image:url("https://media.giphy.com/media/xT9IgzoKnwFNmISR8I/giphy.gif");
+
+}
+
+/* DevOps Engineer */
+
+.experience-card:nth-child(2)::before{
+
+background-image:url("https://media.giphy.com/media/ZVik7pBtu9dNS/giphy.gif");
+
+}
+
+/* =========================
+HEADER ICONS GLASS STYLE
+========================= */
+
+.icon-btn {
+
+width:42px;
+height:42px;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+border-radius:50%;
+
+background:rgba(255,255,255,0.08);
+
+backdrop-filter:blur(8px);
+
+border:1px solid rgba(255,255,255,0.15);
+
+transition:0.3s;
+
+}
+
+.icon-btn img{
+
+width:20px;
+height:20px;
+
+}
+
+.icon-btn:hover{
+
+transform:translateY(-3px);
+
+background:rgba(34,211,238,0.25);
+
+box-shadow:0 0 15px rgba(34,211,238,0.6);
+
+}
+
+.company-card::before,
+.experience-card::before,
+.project-card::before{
+
+opacity:0.12;
+
+background-size:cover;
+background-position:center;
+
 }
