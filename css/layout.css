@@ -371,3 +371,22 @@ background:rgba(0,20,40,0.45);
 z-index:-1;
 
 }
+
+#particles-js{
+
+position:fixed;
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+z-index:-2;
+
+background:#020c1b;
+
+}
+
+body{
+background:#020c1b;
+}
