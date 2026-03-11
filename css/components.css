@@ -437,9 +437,19 @@ background-image:url("https://media.giphy.com/media/xT9IgzoKnwFNmISR8I/giphy.gif
 
 }
 
-/* DevOps Engineer */
-
 .experience-card:nth-child(2)::before{
+
+background-image:url("https://media.giphy.com/media/l41YtZOb9EUABnuqA/giphy.gif");
+
+}
+
+.experience-card:nth-child(3)::before{
+
+background-image:url("https://media.giphy.com/media/xT9IgzoKnwFNmISR8I/giphy.gif");
+
+}
+
+.experience-card:nth-child(4)::before{
 
 background-image:url("https://media.giphy.com/media/ZVik7pBtu9dNS/giphy.gif");
 
@@ -495,5 +505,33 @@ opacity:0.12;
 
 background-size:cover;
 background-position:center;
+
+}
+
+/* =========================
+PROJECT GIF BACKGROUNDS
+========================= */
+
+.project-card:nth-child(1)::before{
+
+background-image:url("https://media.giphy.com/media/13HgwGsXF0aiGY/giphy.gif");
+
+}
+
+.project-card:nth-child(2)::before{
+
+background-image:url("https://media.giphy.com/media/coxQHKASG60HrHtvkt/giphy.gif");
+
+}
+
+.project-card:nth-child(3)::before{
+
+background-image:url("https://media.giphy.com/media/ZVik7pBtu9dNS/giphy.gif");
+
+}
+
+.project-card:nth-child(4)::before{
+
+background-image:url("https://media.giphy.com/media/l41YtZOb9EUABnuqA/giphy.gif");
 
 }
