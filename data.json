@@ -1,43 +1,42 @@
 {
 "personal": {
-"name": "Shashi Kumar Singh",
-"title": "Senior DevOps & Platform Engineer",
+"name": "Ankit Kumar Sharma",
+"title": "DevOps & Platform Architect",
 "tagline": "Building scalable cloud platforms, Kubernetes ecosystems and enterprise DevOps automation systems.",
 "location": "Gurugram, India",
 
 "profileImage": "assets/profile.jpg",
 "resume": "assets/resume.pdf",
 
-"email": "shashi.gotit38@gmail.com",
-"phone": "+917903286693",
-"whatsapp": "https://wa.me/917903286693",
+"email": "ankit13690@gmail.com",
+"phone": "+919891416264",
+"whatsapp": "https://wa.me/919891416264",
 
-"linkedin": "https://linkedin.com/in/shashi-kumar-singh-52984b127",
-"github": "https://github.com/shashisingh007"
+"linkedin": "https://linkedin.com/in/ankit-sharma-13690",
+"github": "https://github.com/ankit13690"
 
 },
 
 "metrics": [
-{ "value": "7+", "label": "Years Experience" },
+{ "value": "13+", "label": "Years Experience" },
 { "value": "50+", "label": "CI/CD Pipelines Built" },
 { "value": "30+", "label": "Production Deployments" },
 { "value": "15+", "label": "DevOps Tools Used" }
 ],
 
-"summary": "Senior DevOps & Platform Engineer with 7+ years of experience designing cloud infrastructure, building Kubernetes platforms and developing enterprise CI/CD automation systems. Strong expertise in AWS architecture, Infrastructure as Code using Terraform, container orchestration with Kubernetes and observability platforms using Prometheus and Grafana. Passionate about improving platform reliability, engineering productivity and system scalability through DevOps automation and modern platform engineering practices.",
+"summary": "DevOps & Platform Architect with 13+ years of experience designing cloud infrastructure, building Kubernetes platforms and developing enterprise CI/CD automation systems. Strong expertise in AWS architecture, Infrastructure as Code using Terraform, container orchestration with Kubernetes and observability platforms using Prometheus and Grafana. Passionate about improving platform reliability, engineering productivity and system scalability through DevOps automation and modern platform engineering practices.",
 
 "devopsStack": {
 
-"Cloud Platforms": [
+"Platforms": [
   "AWS",
   "Azure",
-  "GCP"
+  "Lakehouse"
 ],
 
 "Containers & Orchestration": [
   "Docker",
-  "Kubernetes",
-  "Helm"
+  "Kubernetes"
 ],
 
 "Infrastructure as Code": [
@@ -49,16 +48,13 @@
 "CI/CD Platforms": [
   "Jenkins",
   "GitHub Actions",
-  "Azure DevOps",
-  "GitLab CI",
   "ArgoCD"
 ],
 
 "Monitoring & Observability": [
   "Prometheus",
   "Grafana",
-  "ELK Stack",
-  "Zabbix"
+  "ELK Stack"
 ],
 
 "Databases": [
@@ -69,8 +65,7 @@
 
 "Programming": [
   "Python",
-  "Bash",
-  "PowerShell"
+  "Bash"
 ],
 
 "Security": [
@@ -88,17 +83,27 @@
 "industry": "Retail Technology"
 },
 {
-"name": "FIS Global",
+"name": "Nokia",
 "logo": "assets/company/fis.png",
 "industry": "FinTech"
 },
 {
-"name": "Intimetec",
+"name": "Global Logic",
 "logo": "assets/company/intimetec.png",
 "industry": "Technology Services"
 },
 {
-"name": "CloudTechner",
+"name": "TCS",
+"logo": "assets/company/cloudtechner.png",
+"industry": "Cloud Engineering Training"
+},
+{
+"name": "Aricent",
+"logo": "assets/company/cloudtechner.png",
+"industry": "Cloud Engineering Training"
+},
+{
+"name": "HCL Technologies",
 "logo": "assets/company/cloudtechner.png",
 "industry": "Cloud Engineering Training"
 }
@@ -107,15 +112,14 @@
 "skills": {
 
 "Cloud Platforms": [
-  { "name": "AWS", "level": 5 },
+  { "name": "AWS", "level": 8 },
   { "name": "Azure", "level": 4 },
-  { "name": "GCP", "level": 4 }
+  { "name": "Lakehouse", "level": 4 }
 ],
 
 "Containers": [
-  { "name": "Docker", "level": 5 },
-  { "name": "Kubernetes", "level": 5 },
-  { "name": "Helm", "level": 4 }
+  { "name": "Docker", "level": 8 },
+  { "name": "Kubernetes", "level": 5 }
 ],
 
 "Infrastructure as Code": [
