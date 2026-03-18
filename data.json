@@ -83,27 +83,27 @@
 },
 {
 "name": "Nokia",
-"logo": "assets/company/fis.png",
+"logo": "assets/company/Nokia.png",
 "industry": "Telecom"
 },
 {
 "name": "Global Logic",
-"logo": "assets/company/intimetec.png",
+"logo": "assets/company/Global Logic.png",
 "industry": "Telecom"
 },
 {
 "name": "TCS",
-"logo": "assets/company/cloudtechner.png",
+"logo": "assets/company/TCS.png",
 "industry": "Cloud Engineering"
 },
 {
 "name": "Aricent",
-"logo": "assets/company/cloudtechner.png",
+"logo": "assets/company/Aricent.png",
 "industry": "Telecom"
 },
 {
 "name": "HCL Technologies",
-"logo": "assets/company/cloudtechner.png",
+"logo": "assets/company/HCL.png",
 "industry": "Retail technology"
 }
 ],
@@ -169,7 +169,7 @@
 ]
 },
 {
-"company": "FIS Global",
+"company": "Nokia",
 "role": "DevOps Engineer",
 "duration": "Sep 2022 – Mar 2023",
 "location": "Gurugram",
@@ -180,7 +180,40 @@
 ]
 },
 {
-"company": "Intimetec",
+"company": "Global Logic",
+"role": "Systems Engineer",
+"duration": "May 2021 – Sep 2022",
+"location": "Jaipur",
+"responsibilities": [
+"Developed automation scripts using Python and Bash.",
+"Managed Linux infrastructure supporting enterprise workloads.",
+"Implemented monitoring solutions improving operational visibility."
+]
+},
+{
+"company": "TCS",
+"role": "Systems Engineer",
+"duration": "May 2021 – Sep 2022",
+"location": "Jaipur",
+"responsibilities": [
+"Developed automation scripts using Python and Bash.",
+"Managed Linux infrastructure supporting enterprise workloads.",
+"Implemented monitoring solutions improving operational visibility."
+]
+},
+{
+"company": "Aricent",
+"role": "Systems Engineer",
+"duration": "May 2021 – Sep 2022",
+"location": "Jaipur",
+"responsibilities": [
+"Developed automation scripts using Python and Bash.",
+"Managed Linux infrastructure supporting enterprise workloads.",
+"Implemented monitoring solutions improving operational visibility."
+]
+},
+{
+"company": "TCS",
 "role": "Systems Engineer",
 "duration": "May 2021 – Sep 2022",
 "location": "Jaipur",
