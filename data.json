@@ -30,8 +30,7 @@
 
 "Platforms": [
   "AWS",
-  "Azure",
-  "Lakehouse"
+  "Azure"
 ],
 
 "Containers & Orchestration": [
@@ -85,27 +84,27 @@
 {
 "name": "Nokia",
 "logo": "assets/company/fis.png",
-"industry": "FinTech"
+"industry": "Telecom"
 },
 {
 "name": "Global Logic",
 "logo": "assets/company/intimetec.png",
-"industry": "Technology Services"
+"industry": "Telecom"
 },
 {
 "name": "TCS",
 "logo": "assets/company/cloudtechner.png",
-"industry": "Cloud Engineering Training"
+"industry": "Cloud Engineering"
 },
 {
 "name": "Aricent",
 "logo": "assets/company/cloudtechner.png",
-"industry": "Cloud Engineering Training"
+"industry": "Telecom"
 },
 {
 "name": "HCL Technologies",
 "logo": "assets/company/cloudtechner.png",
-"industry": "Cloud Engineering Training"
+"industry": "Retail technology"
 }
 ],
 
@@ -113,8 +112,7 @@
 
 "Cloud Platforms": [
   { "name": "AWS", "level": 8 },
-  { "name": "Azure", "level": 4 },
-  { "name": "Lakehouse", "level": 4 }
+  { "name": "Azure", "level": 4 }
 ],
 
 "Containers": [
@@ -130,23 +128,18 @@
 
 "CI/CD": [
   { "name": "Jenkins", "level": 5 },
-  { "name": "GitHub Actions", "level": 5 },
-  { "name": "Azure DevOps", "level": 4 },
-  { "name": "GitLab CI", "level": 4 },
-  { "name": "ArgoCD", "level": 4 }
+  { "name": "GitHub Actions", "level": 5 }
 ],
 
 "Monitoring": [
   { "name": "Prometheus", "level": 5 },
   { "name": "Grafana", "level": 5 },
-  { "name": "ELK Stack", "level": 4 },
-  { "name": "Zabbix", "level": 4 }
+  { "name": "ELK Stack", "level": 4 }
 ],
 
 "Programming": [
   { "name": "Python", "level": 4 },
-  { "name": "Bash", "level": 5 },
-  { "name": "PowerShell", "level": 4 }
+  { "name": "Bash", "level": 5 }
 ],
 
 "Databases": [
