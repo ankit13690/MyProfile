@@ -122,13 +122,15 @@ container.innerHTML = ""
 
 metrics.forEach(metric => {
 
-const value = parseInt(metric.value)
+const rawValue = String(metric.value).trim()
+const value = parseInt(rawValue, 10)
+const hasPlus = rawValue.includes("+")
 
 const card = document.createElement("div")
 card.className = "metric-card"
 
 card.innerHTML = `
-<div class="metric-number" data-target="${value}">0</div>
+<div class="metric-number" data-target="${value}" data-plus="${hasPlus}">0</div>
 <div class="metric-label">${metric.label}</div>
 `
 
@@ -157,6 +159,7 @@ const counters = document.querySelectorAll(".metric-number")
 counters.forEach(counter => {
 
 const target = +counter.getAttribute("data-target")
+const hasPlus = counter.getAttribute("data-plus") === "true"
 
 let count = 0
 
@@ -174,7 +177,7 @@ requestAnimationFrame(update)
 
 }else{
 
-counter.innerText = target + "+"
+counter.innerText = hasPlus ? target + "+" : target
 
 }
 
