@@ -19,9 +19,9 @@
 
 "metrics": [
 { "value": "13+", "label": "Years Experience" },
-{ "value": "50+", "label": "CI/CD Pipelines Built" },
-{ "value": "30+", "label": "Production Deployments" },
-{ "value": "15+", "label": "DevOps Tools Used" }
+{ "value": "26", "label": "Cloud & Devops Projects" },
+{ "value": "16", "label": "Databricks Projects" },
+{ "value": "2", "label": "SRE" }
 ],
 
 "summary": "DevOps & Platform Architect with 13+ years of experience designing cloud infrastructure, building Kubernetes platforms and developing enterprise CI/CD automation systems. Strong expertise in AWS architecture, Infrastructure as Code using Terraform, container orchestration with Kubernetes and observability platforms using Prometheus and Grafana. Passionate about improving platform reliability, engineering productivity and system scalability through DevOps automation and modern platform engineering practices.",
