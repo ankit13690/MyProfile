@@ -1,58 +1,35 @@
 /* =========================================
-DEVOPS TOOLS
+SKILL ICONS
 ========================================= */
 
-function renderTools(){
+const TOOL_ICON_MAP = {
 
-const tools = [
+"AWS":"assets/tools/aws.png",
+"Azure":"assets/tools/azure.png",
+"GCP":"assets/tools/databricks.png",
+"Databricks":"assets/tools/databricks.png",
 
-{name:"AWS",icon:"assets/tools/aws.png",class:"tool-aws"},
-{name:"Azure",icon:"assets/tools/azure.png",class:"tool-cloud"},
-{name:"GCP",icon:"assets/tools/databricks.png",class:"tool-cloud"},
+"Docker":"assets/tools/docker.png",
+"Kubernetes":"assets/tools/kubernetes.png",
+"Helm":"assets/tools/helm.png",
 
-{name:"Docker",icon:"assets/tools/docker.png",class:"tool-docker"},
-{name:"Kubernetes",icon:"assets/tools/kubernetes.png",class:"tool-kubernetes"},
-{name:"Helm",icon:"assets/tools/helm.png",class:"tool-kubernetes"},
+"Terraform":"assets/tools/terraform.png",
+"Ansible":"assets/tools/ansible.png",
 
-{name:"Terraform",icon:"assets/tools/terraform.png",class:"tool-terraform"},
-{name:"Ansible",icon:"assets/tools/ansible.png",class:"tool-ansible"},
+"Jenkins":"assets/tools/jenkins.png",
+"GitHub Actions":"assets/tools/github-actions.png",
+"GitLab CI":"assets/tools/argocd.png",
 
-{name:"Jenkins",icon:"assets/tools/jenkins.png",class:"tool-jenkins"},
-{name:"GitHub Actions",icon:"assets/tools/github-actions.png",class:"tool-github"},
-{name:"GitLab CI",icon:"assets/tools/argocd.png",class:"tool-github"},
+"Prometheus":"assets/tools/prometheus.png",
+"Grafana":"assets/tools/grafana.png",
+"ELK Stack":"assets/tools/elk.png",
 
-{name:"Prometheus",icon:"assets/tools/prometheus.png",class:"tool-monitor"},
-{name:"Grafana",icon:"assets/tools/grafana.png",class:"tool-monitor"},
-{name:"ELK Stack",icon:"assets/tools/elk.png",class:"tool-monitor"},
+"Redis":"assets/tools/redis.png",
+"MySQL":"assets/tools/mysql.png",
+"PostgreSQL":"assets/tools/postgres.png",
 
-{name:"Redis",icon:"assets/tools/redis.png",class:"tool-db"},
-{name:"MySQL",icon:"assets/tools/mysql.png",class:"tool-db"},
-{name:"PostgreSQL",icon:"assets/tools/postgres.png",class:"tool-db"},
-
-{name:"Python",icon:"assets/tools/python.png",class:"tool-code"},
-{name:"Bash",icon:"assets/tools/bash.png",class:"tool-code"}
-
-]
-
-const container = document.getElementById("toolsContainer")
-if(!container) return
-
-container.innerHTML=""
-
-tools.forEach(tool=>{
-
-const card = document.createElement("div")
-
-card.className = `tool-card ${tool.class}`
-
-card.innerHTML = `
-<img src="${tool.icon}">
-<p>${tool.name}</p>
-`
-
-container.appendChild(card)
-
-})
+"Python":"assets/tools/python.png",
+"Bash":"assets/tools/bash.png"
 
 }
 
@@ -79,8 +56,6 @@ renderExperience(data.experience)
 renderProjects(data.projects)
 
 renderCertifications(data.certifications)
-
-renderTools()
 
 attachContactLinks(data.personal)
 
@@ -223,7 +198,11 @@ card.className = "skill-card"
 let items = ""
 
 skills[category].forEach(skill => {
-items += `<li>${skill.name}</li>`
+
+const icon = TOOL_ICON_MAP[skill.name]
+const iconHtml = icon ? `<img src="${icon}" alt="${skill.name}">` : ""
+items += `<li class="skill-item">${iconHtml}<span>${skill.name}</span></li>`
+
 })
 
 card.innerHTML = `

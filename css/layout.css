@@ -318,6 +318,31 @@ color:#cbd5e1;
 
 }
 
+.skill-card ul{
+
+padding-left:0;
+margin:0;
+
+}
+
+.skill-item{
+
+display:flex;
+align-items:center;
+gap:10px;
+
+list-style:none;
+
+}
+
+.skill-item img{
+
+width:20px;
+height:20px;
+flex:0 0 20px;
+
+}
+
 /* =========================================
 COMPANIES GRID
 ========================================= */
