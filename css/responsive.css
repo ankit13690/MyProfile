@@ -76,6 +76,13 @@ height:220px;
 
 }
 
+.profile-image-inline{
+
+width:70px;
+height:70px;
+
+}
+
 #heroName{
 
 font-size:36px;
@@ -132,6 +139,13 @@ MOBILE (≤480px)
 
 width:180px;
 height:180px;
+
+}
+
+.profile-image-inline{
+
+width:60px;
+height:60px;
 
 }
 

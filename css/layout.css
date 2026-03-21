@@ -50,6 +50,26 @@ margin:auto;
 
 }
 
+.hero-name-row{
+
+display:flex;
+align-items:center;
+gap:18px;
+flex-wrap:wrap;
+
+}
+
+.profile-image-inline{
+
+width:90px;
+height:90px;
+border-width:3px;
+box-shadow:
+0 0 24px rgba(34,211,238,0.4),
+0 0 55px rgba(34,211,238,0.18);
+
+}
+
 /* =========================================
 PROFILE IMAGE
 ========================================= */
