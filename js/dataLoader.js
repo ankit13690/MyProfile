@@ -51,8 +51,7 @@ renderMetrics(data.metrics)
 renderAbout(data.summary)
 
 renderSkills(data.skills)
-renderCompanies(data.companies)
-renderExperience(data.experience)
+renderExperience(data.experience, data.companies)
 renderProjects(data.projects)
 
 renderCertifications(data.certifications)
@@ -219,45 +218,22 @@ container.appendChild(card)
 
 
 /* =========================================
-COMPANIES
-========================================= */
-
-function renderCompanies(companies){
-
-const container = document.getElementById("companiesContainer")
-if(!container) return
-
-container.innerHTML = ""
-
-companies.forEach(company => {
-
-const card = document.createElement("div")
-card.className = "company-card"
-
-card.innerHTML = `
-<img src="${company.logo}">
-<h3>${company.name}</h3>
-<p>${company.industry}</p>
-`
-
-container.appendChild(card)
-
-})
-
-}
-
-
-
-/* =========================================
 EXPERIENCE
 ========================================= */
 
-function renderExperience(exp){
+function renderExperience(exp, companies){
 
 const container = document.getElementById("experienceContainer")
 if(!container) return
 
 container.innerHTML = ""
+
+const companyLogos = {}
+if(Array.isArray(companies)){
+companies.forEach(company => {
+companyLogos[company.name] = company.logo
+})
+}
 
 exp.forEach(item => {
 
@@ -270,7 +246,11 @@ item.responsibilities.forEach(r=>{
 responsibilities += `<li>${r}</li>`
 })
 
+const logo = companyLogos[item.company]
+const logoHtml = logo ? `<img class="experience-logo" src="${logo}" alt="${item.company} logo">` : ""
+
 card.innerHTML = `
+${logoHtml}
 <h3>${item.role}</h3>
 <h4>${item.company}</h4>
 <p>${item.duration} • ${item.location}</p>

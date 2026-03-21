@@ -421,6 +421,16 @@ backdrop-filter:blur(6px);
 
 }
 
+.experience-logo{
+
+width:90px;
+height:36px;
+object-fit:contain;
+margin-bottom:14px;
+filter:drop-shadow(0 0 6px rgba(34,211,238,0.25));
+
+}
+
 .experience-card:hover{
 
 transform:translateY(-6px);
