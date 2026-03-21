@@ -19,7 +19,7 @@ const tools = [
 
 {name:"Jenkins",icon:"assets/tools/jenkins.png",class:"tool-jenkins"},
 {name:"GitHub Actions",icon:"assets/tools/github-actions.png",class:"tool-github"},
-{name:"GitLab CI",icon:"assets/tools/gitlab.png",class:"tool-github"},
+{name:"GitLab CI",icon:"assets/tools/argocd.png",class:"tool-github"},
 
 {name:"Prometheus",icon:"assets/tools/prometheus.png",class:"tool-monitor"},
 {name:"Grafana",icon:"assets/tools/grafana.png",class:"tool-monitor"},
