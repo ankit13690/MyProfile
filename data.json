@@ -24,7 +24,9 @@
 { "value": "2", "label": "SRE" }
 ],
 
-"summary": "DevOps & Platform Architect with 13+ years of experience designing cloud infrastructure, building Kubernetes platforms and developing enterprise CI/CD automation systems. Strong expertise in AWS architecture, Infrastructure as Code using Terraform, container orchestration with Kubernetes and observability platforms using Prometheus and Grafana. Passionate about improving platform reliability, engineering productivity and system scalability through DevOps automation and modern platform engineering practices.",
+"summary": "Platform Architect specializing in secure, scalable, and high-performance cloud and data platforms across AWS, Azure, and Databricks Lakehouse. Expertise in Terraform-based IaC, Kubernetes, and DevOps practices, building standardized, multi-tenant platforms governed through AWS Control Tower and Unity Catalog.
+
+Driven by reliability and efficiency, I apply SRE principles and observability using CloudWatch, Prometheus, Grafana, and Databricks AI/BI dashboards—achieving ~30–35% cloud cost optimization and reducing MTTR by up to 50%. Proven in leading platform transformations and delivering resilient architectures with robust backup and disaster recovery strategies ensuring high availability and business continuity.",
 
 "devopsStack": {
 
