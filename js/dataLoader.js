@@ -367,23 +367,42 @@ container.appendChild(card)
 CONTACT LINKS
 ========================================= */
 
+function formatPhoneDisplay(rawPhone){
+
+if(!rawPhone) return ""
+if(rawPhone.includes("-")) return rawPhone
+
+if(rawPhone.startsWith("+91") && rawPhone.length >= 13){
+return `+91-${rawPhone.slice(3)}`
+}
+
+return rawPhone
+
+}
+
 function attachContactLinks(personal){
 
 setTimeout(()=>{
 
 document.getElementById("emailLink").href=`mailto:${personal.email}`
-document.getElementById("phoneLink").href=`tel:${personal.phone}`
 document.getElementById("whatsappLink").href=personal.whatsapp
 document.getElementById("linkedinLink").href=personal.linkedin
 document.getElementById("githubLink").href=personal.github
 document.getElementById("resumeBtn").href=personal.resume
 
 document.getElementById("footerEmail").href=`mailto:${personal.email}`
-document.getElementById("footerPhone").href=`tel:${personal.phone}`
 document.getElementById("footerWhatsapp").href=personal.whatsapp
 document.getElementById("footerLinkedin").href=personal.linkedin
 document.getElementById("footerGithub").href=personal.github
 document.getElementById("footerResume").href=personal.resume
+
+const phoneText = formatPhoneDisplay(personal.phone)
+
+const headerPhoneText = document.getElementById("phoneText")
+if(headerPhoneText) headerPhoneText.innerText = phoneText
+
+const footerPhoneText = document.getElementById("footerPhoneText")
+if(footerPhoneText) footerPhoneText.innerText = phoneText
 
 document.getElementById("footerLocationText").innerText=personal.location
 

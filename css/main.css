@@ -48,12 +48,11 @@ pointer-events:none;
 z-index:-5;
 
 /* DARK DEVOPS COLOR */
-background:radial-gradient(
-circle at center,
-#020617 0%,
-#020617 40%,
-#01030a 100%
-);
+background:
+radial-gradient(1100px circle at 15% 20%, rgba(30,64,175,0.18), transparent 60%),
+radial-gradient(900px circle at 85% 25%, rgba(14,116,144,0.16), transparent 58%),
+radial-gradient(700px circle at 50% 85%, rgba(49,46,129,0.18), transparent 60%),
+linear-gradient(180deg, #020617 0%, #06122c 45%, #01030f 100%);
 
 }
 
