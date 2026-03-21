@@ -8,7 +8,7 @@ const tools = [
 
 {name:"AWS",icon:"assets/tools/aws.png",class:"tool-aws"},
 {name:"Azure",icon:"assets/tools/azure.png",class:"tool-cloud"},
-{name:"GCP",icon:"assets/tools/gcp.png",class:"tool-cloud"},
+{name:"GCP",icon:"assets/tools/databricks.png",class:"tool-cloud"},
 
 {name:"Docker",icon:"assets/tools/docker.png",class:"tool-docker"},
 {name:"Kubernetes",icon:"assets/tools/kubernetes.png",class:"tool-kubernetes"},
