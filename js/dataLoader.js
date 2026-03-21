@@ -19,6 +19,7 @@ const TOOL_ICON_MAP = {
 "Jenkins":"assets/tools/jenkins.png",
 "GitHub Actions":"assets/tools/github-actions.png",
 "GitLab CI":"assets/tools/argocd.png",
+"ArgoCD":"assets/tools/argocd.png",
 
 "Prometheus":"assets/tools/prometheus.png",
 "Grafana":"assets/tools/grafana.png",
@@ -231,7 +232,7 @@ container.innerHTML = ""
 const companyLogos = {}
 if(Array.isArray(companies)){
 companies.forEach(company => {
-companyLogos[company.name] = company.logo
+companyLogos[company.name.toLowerCase()] = company.logo
 })
 }
 
@@ -246,7 +247,12 @@ item.responsibilities.forEach(r=>{
 responsibilities += `<li>${r}</li>`
 })
 
-const logo = companyLogos[item.company]
+const companyKey = String(item.company).toLowerCase()
+let logo = companyLogos[companyKey]
+if(!logo){
+const matchKey = Object.keys(companyLogos).find(key => companyKey.includes(key))
+if(matchKey) logo = companyLogos[matchKey]
+}
 const logoHtml = logo ? `<img class="experience-logo" src="${logo}" alt="${item.company} logo">` : ""
 
 card.innerHTML = `

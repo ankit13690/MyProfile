@@ -83,27 +83,27 @@
 },
 {
 "name": "Nokia",
-"logo": "assets/company/Nokia.png",
+  "logo": "assets/company/Nokia.jpg",
 "industry": "Telecom"
 },
 {
 "name": "Global Logic",
-"logo": "assets/company/GlobalLogic.png",
+  "logo": "assets/company/GlobalLogic.jpg",
 "industry": "Telecom"
 },
 {
 "name": "TCS",
-"logo": "assets/company/TCS.png",
+  "logo": "assets/company/TCS.jpg",
 "industry": "Cloud Engineering"
 },
 {
 "name": "Aricent",
-"logo": "assets/company/Aricent.png",
+  "logo": "assets/company/Aricent.jpg",
 "industry": "Telecom"
 },
 {
 "name": "HCL Technologies",
-"logo": "assets/company/HCL.png",
+  "logo": "assets/company/HCL.jpg",
 "industry": "Retail technology"
 }
 ],
@@ -126,10 +126,11 @@
   { "name": "CloudFormation", "level": 3 }
 ],
 
-"CI/CD": [
-  { "name": "Jenkins", "level": 5 },
-  { "name": "GitHub Actions", "level": 5 }
-],
+  "CI/CD": [
+    { "name": "Jenkins", "level": 5 },
+    { "name": "GitHub Actions", "level": 5 },
+    { "name": "ArgoCD", "level": 4 }
+  ],
 
 "Monitoring": [
   { "name": "Prometheus", "level": 5 },
