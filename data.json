@@ -83,27 +83,27 @@
 },
 {
 "name": "Nokia",
-  "logo": "assets/company/Nokia.jpg",
+  "logo": "assets/company/Nokia.png",
 "industry": "Telecom"
 },
 {
 "name": "Global Logic",
-  "logo": "assets/company/GlobalLogic.jpg",
+  "logo": "assets/company/GlobalLogic.png",
 "industry": "Telecom"
 },
 {
 "name": "TCS",
-  "logo": "assets/company/TCS.jpg",
+  "logo": "assets/company/TCS.png",
 "industry": "Cloud Engineering"
 },
 {
 "name": "Aricent",
-  "logo": "assets/company/Aricent.jpg",
+  "logo": "assets/company/Aricent.png",
 "industry": "Telecom"
 },
 {
 "name": "HCL Technologies",
-  "logo": "assets/company/HCL.jpg",
+  "logo": "assets/company/HCL.png",
 "industry": "Retail technology"
 }
 ],
