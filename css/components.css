@@ -453,6 +453,23 @@ margin-bottom:15px;
 
 }
 
+.cert-list{
+
+margin-top:10px;
+padding-left:20px;
+
+color:#cbd5e1;
+font-size:16px;
+line-height:1.7;
+
+}
+
+.cert-list li{
+
+margin-bottom:8px;
+
+}
+
 .footer-contact-item{
 
 display:flex;
