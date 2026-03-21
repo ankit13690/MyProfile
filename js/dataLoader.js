@@ -8,7 +8,7 @@ const tools = [
 
 {name:"AWS",icon:"assets/tools/aws.png",class:"tool-aws"},
 {name:"Azure",icon:"assets/tools/azure.png",class:"tool-cloud"},
-{name:"GCP",icon:"assets/tools/gcp.png",class:"tool-cloud"},
+{name:"GCP",icon:"assets/tools/databricks.png",class:"tool-cloud"},
 
 {name:"Docker",icon:"assets/tools/docker.png",class:"tool-docker"},
 {name:"Kubernetes",icon:"assets/tools/kubernetes.png",class:"tool-kubernetes"},
@@ -19,7 +19,7 @@ const tools = [
 
 {name:"Jenkins",icon:"assets/tools/jenkins.png",class:"tool-jenkins"},
 {name:"GitHub Actions",icon:"assets/tools/github-actions.png",class:"tool-github"},
-{name:"GitLab CI",icon:"assets/tools/gitlab.png",class:"tool-github"},
+{name:"GitLab CI",icon:"assets/tools/argocd.png",class:"tool-github"},
 
 {name:"Prometheus",icon:"assets/tools/prometheus.png",class:"tool-monitor"},
 {name:"Grafana",icon:"assets/tools/grafana.png",class:"tool-monitor"},
