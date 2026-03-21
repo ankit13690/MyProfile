@@ -398,7 +398,7 @@ document.getElementById("footerResume").href=personal.resume
 
 const phoneText = formatPhoneDisplay(personal.phone)
 
-const headerPhoneText = document.getElementById("phoneText")
+const headerPhoneText = document.getElementById("headerPhoneText")
 if(headerPhoneText) headerPhoneText.innerText = phoneText
 
 const footerPhoneText = document.getElementById("footerPhoneText")
