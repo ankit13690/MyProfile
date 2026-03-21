@@ -8,7 +8,7 @@ const tools = [
 
 {name:"AWS",icon:"assets/tools/aws.png",class:"tool-aws"},
 {name:"Azure",icon:"assets/tools/azure.png",class:"tool-cloud"},
-{name:"GCP",icon:"assets/tools/databricks.png",class:"tool-cloud"},
+{name:"GCP",icon:"assets/tools/gcp.png",class:"tool-cloud"},
 
 {name:"Docker",icon:"assets/tools/docker.png",class:"tool-docker"},
 {name:"Kubernetes",icon:"assets/tools/kubernetes.png",class:"tool-kubernetes"},
@@ -19,7 +19,7 @@ const tools = [
 
 {name:"Jenkins",icon:"assets/tools/jenkins.png",class:"tool-jenkins"},
 {name:"GitHub Actions",icon:"assets/tools/github-actions.png",class:"tool-github"},
-{name:"GitLab CI",icon:"assets/tools/argocd.png",class:"tool-github"},
+{name:"GitLab CI",icon:"assets/tools/gitlab.png",class:"tool-github"},
 
 {name:"Prometheus",icon:"assets/tools/prometheus.png",class:"tool-monitor"},
 {name:"Grafana",icon:"assets/tools/grafana.png",class:"tool-monitor"},
@@ -384,35 +384,17 @@ function attachContactLinks(personal){
 
 setTimeout(()=>{
 
-const emailLink = document.getElementById("emailLink")
-if(emailLink) emailLink.href = `mailto:${personal.email}`
+document.getElementById("emailLink").href=`mailto:${personal.email}`
+document.getElementById("whatsappLink").href=personal.whatsapp
+document.getElementById("linkedinLink").href=personal.linkedin
+document.getElementById("githubLink").href=personal.github
+document.getElementById("resumeBtn").href=personal.resume
 
-const whatsappLink = document.getElementById("whatsappLink")
-if(whatsappLink) whatsappLink.href = personal.whatsapp
-
-const linkedinLink = document.getElementById("linkedinLink")
-if(linkedinLink) linkedinLink.href = personal.linkedin
-
-const githubLink = document.getElementById("githubLink")
-if(githubLink) githubLink.href = personal.github
-
-const resumeBtn = document.getElementById("resumeBtn")
-if(resumeBtn) resumeBtn.href = personal.resume
-
-const footerEmail = document.getElementById("footerEmail")
-if(footerEmail) footerEmail.href = `mailto:${personal.email}`
-
-const footerWhatsapp = document.getElementById("footerWhatsapp")
-if(footerWhatsapp) footerWhatsapp.href = personal.whatsapp
-
-const footerLinkedin = document.getElementById("footerLinkedin")
-if(footerLinkedin) footerLinkedin.href = personal.linkedin
-
-const footerGithub = document.getElementById("footerGithub")
-if(footerGithub) footerGithub.href = personal.github
-
-const footerResume = document.getElementById("footerResume")
-if(footerResume) footerResume.href = personal.resume
+document.getElementById("footerEmail").href=`mailto:${personal.email}`
+document.getElementById("footerWhatsapp").href=personal.whatsapp
+document.getElementById("footerLinkedin").href=personal.linkedin
+document.getElementById("footerGithub").href=personal.github
+document.getElementById("footerResume").href=personal.resume
 
 const phoneText = formatPhoneDisplay(personal.phone)
 
@@ -422,8 +404,7 @@ if(headerPhoneText) headerPhoneText.innerText = phoneText
 const footerPhoneText = document.getElementById("footerPhoneText")
 if(footerPhoneText) footerPhoneText.innerText = phoneText
 
-const footerLocationText = document.getElementById("footerLocationText")
-if(footerLocationText) footerLocationText.innerText = personal.location
+document.getElementById("footerLocationText").innerText=personal.location
 
 },500)
 
