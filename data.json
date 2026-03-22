@@ -205,7 +205,7 @@
 "company": "TCS",
 "role": "IT Analyst (Devops)",
 "duration": "Jan 2019 – May 2020",
-"location": "Jaipur",
+"location": "Gurugram, Delhi-NCR",
 "responsibilities": [
 "Built secure and lightweight Docker images (Alpine/Distroless), reducing image size by ~70% and minimizing critical vulnerabilities.",
 "Designed and implemented observability solutions using Prometheus, Grafana, and ELK/EFK stacks—reducing MTTD by ~50% and improving incident response.",
@@ -220,7 +220,7 @@
 "company": "Aricent",
 "role": "Sr. Systems Engineer (Virtualization)",
 "duration": "Mar 2016 – Dec 2018",
-"location": "Jaipur",
+"location": "Gurugram, Delhi-NCR",
 "responsibilities": [
 "Deployed and managed application platforms on AWS using Ansible and Python.",
 "Provided operational support for application platforms and Linux-based systems.",
@@ -234,7 +234,7 @@
 "company": "HCL Technologies",
 "role": "IT Analyst (Datacentre Operations)",
 "duration": "Jan 2013 – Jan 2016",
-"location": "Jaipur",
+"location": "Noida, Delhi-NCR",
 "responsibilities": [
 "Developed automation scripts using Python and Bash.",
 "Managed Linux infrastructure supporting enterprise workloads.",
