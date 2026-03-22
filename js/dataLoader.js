@@ -75,8 +75,17 @@ HERO
 
 function renderHero(data){
 
-document.getElementById("profileImage").src = data.personal.profileImage
-document.getElementById("heroName").innerText = data.personal.name
+const heroName = document.getElementById("heroName")
+const profileImage = document.getElementById("profileImage")
+
+if(profileImage) profileImage.src = data.personal.profileImage
+
+if(heroName){
+const rawName = String(data.personal.name || "")
+const spacedName = rawName.replace(/([a-z])([A-Z])/g, "$1 $2").replace(/\s+/g, " ").trim()
+heroName.innerText = spacedName
+}
+
 document.getElementById("heroTitle").innerText = data.personal.title
 document.getElementById("heroTagline").innerText = data.personal.tagline
 
