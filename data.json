@@ -21,7 +21,7 @@
 { "value": "13+", "label": "Years Experience" },
 { "value": "26", "label": "Cloud & Devops Projects" },
 { "value": "16", "label": "Databricks Projects" },
-{ "value": "2", "label": "SRE" }
+{ "value": "2", "label": "SRE Projects" }
 ],
 
 "summary": "Platform Architect specializing in secure, scalable, and high-performance cloud and data platforms across AWS, Azure, and Databricks Lakehouse. Expertise in Terraform-based IaC, Kubernetes, and DevOps practices, building standardized, multi-tenant platforms governed through AWS Control Tower and Unity Catalog. Driven by reliability and efficiency, I apply SRE principles and observability using CloudWatch, Prometheus, Grafana, and Databricks AI/BI dashboards—achieving ~30-35% cloud cost optimization and reducing MTTR by up to 50%. Proven in leading platform transformations and delivering resilient architectures with robust backup and disaster recovery strategies ensuring high availability and business continuity.",
