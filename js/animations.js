@@ -105,6 +105,7 @@ counters.forEach(counter => observer.observe(counter))
 function animateCounter(counter){
 
 const target = parseInt(counter.getAttribute("data-target"))
+const hasPlus = counter.getAttribute("data-plus") === "true"
 
 let current = 0
 
@@ -119,7 +120,7 @@ current += increment
 
 if(current >= target){
 
-counter.innerText = target + "+"
+counter.innerText = hasPlus ? target + "+" : target
 clearInterval(timer)
 
 }else{

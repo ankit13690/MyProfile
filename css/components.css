@@ -47,6 +47,7 @@ font-size:20px;
 font-weight:600;
 color:#38bdf8;
 letter-spacing:0.6px;
+word-spacing:4px;
 
 }
 
@@ -450,6 +451,23 @@ font-size:18px;
 color:#38bdf8;
 
 margin-bottom:15px;
+
+}
+
+.cert-list{
+
+margin-top:10px;
+padding-left:20px;
+
+color:#cbd5e1;
+font-size:16px;
+line-height:1.7;
+
+}
+
+.cert-list li{
+
+margin-bottom:8px;
 
 }
 

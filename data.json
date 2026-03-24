@@ -19,12 +19,12 @@
 
 "metrics": [
 { "value": "13+", "label": "Years Experience" },
-{ "value": "50+", "label": "CI/CD Pipelines Built" },
-{ "value": "30+", "label": "Production Deployments" },
-{ "value": "15+", "label": "DevOps Tools Used" }
+{ "value": "26", "label": "Cloud & Devops Projects" },
+{ "value": "16", "label": "Databricks Projects" },
+{ "value": "2", "label": "SRE Projects" }
 ],
 
-"summary": "DevOps & Platform Architect with 13+ years of experience designing cloud infrastructure, building Kubernetes platforms and developing enterprise CI/CD automation systems. Strong expertise in AWS architecture, Infrastructure as Code using Terraform, container orchestration with Kubernetes and observability platforms using Prometheus and Grafana. Passionate about improving platform reliability, engineering productivity and system scalability through DevOps automation and modern platform engineering practices.",
+"summary": "Platform Architect specializing in secure, scalable, and high-performance cloud and data platforms across AWS, Azure, and Databricks Lakehouse. Expertise in Terraform-based IaC, Kubernetes, and DevOps practices, building standardized, multi-tenant platforms governed through AWS Control Tower and Unity Catalog. Driven by reliability and efficiency, I apply SRE principles and observability using CloudWatch, Prometheus, Grafana, and Databricks AI/BI dashboards—achieving ~30-35% cloud cost optimization and reducing MTTR by up to 50%. Proven in leading platform transformations and delivering resilient architectures with robust backup and disaster recovery strategies ensuring high availability and business continuity.",
 
 "devopsStack": {
 
@@ -83,27 +83,27 @@
 },
 {
 "name": "Nokia",
-"logo": "assets/company/Nokia.png",
+  "logo": "assets/company/Nokia.png",
 "industry": "Telecom"
 },
 {
 "name": "Global Logic",
-"logo": "assets/company/Global Logic.png",
+  "logo": "assets/company/GlobalLogic.png",
 "industry": "Telecom"
 },
 {
 "name": "TCS",
-"logo": "assets/company/TCS.png",
+  "logo": "assets/company/TCS.png",
 "industry": "Cloud Engineering"
 },
 {
 "name": "Aricent",
-"logo": "assets/company/Aricent.png",
+  "logo": "assets/company/Aricent.png",
 "industry": "Telecom"
 },
 {
 "name": "HCL Technologies",
-"logo": "assets/company/HCL.png",
+  "logo": "assets/company/HCL.png",
 "industry": "Retail technology"
 }
 ],
@@ -126,10 +126,11 @@
   { "name": "CloudFormation", "level": 3 }
 ],
 
-"CI/CD": [
-  { "name": "Jenkins", "level": 5 },
-  { "name": "GitHub Actions", "level": 5 }
-],
+  "CI/CD": [
+    { "name": "Jenkins", "level": 5 },
+    { "name": "GitHub Actions", "level": 5 },
+    { "name": "ArgoCD", "level": 4 }
+  ],
 
 "Monitoring": [
   { "name": "Prometheus", "level": 5 },
@@ -156,67 +157,84 @@
 
 "experience": [
 {
-"company": "Adidas",
-"role": "Senior DevOps Engineer",
-"duration": "Apr 2023 – Present",
-"location": "Gurugram",
+"company": "Adidas India marketing pvt ltd",
+"role": "Solutions Architect (Platform Engineering)",
+"duration": "Dec 2021 – Present",
+"location": "Gurugram, Delhi-NCR",
 "responsibilities": [
-"Designed Kubernetes infrastructure supporting microservices based retail applications.",
-"Built automated CI/CD pipelines enabling rapid and reliable application deployments.",
-"Developed reusable Terraform modules for scalable AWS infrastructure provisioning.",
-"Implemented centralized monitoring platform using Prometheus and Grafana.",
-"Reduced deployment time by 70% through DevOps automation."
+"Architected and maintained the core platform across Databricks, AWS, and Azure using Terraform IaC—enabling standardized, reusable infrastructure for DE/DS/ML/BI teams.",
+"Built self-service platform capabilities accelerating data product delivery and reducing time-to-market by ~80%.",
+"Developed reusable CI/CD ecosystems with Docker, Kubernetes, and Jenkins (shared libraries), standardizing deployments across teams.",
+"Led migration of governance for 300+ data products to Unity Catalog—establishing centralized governance, fine-grained access control, and serverless enablement.",
+"Engineered auto-remediation (Sentinel utility) for Databricks ETL pipelines, reducing incidents and resolution time by ~75%.",
+"Designed cost observability and optimization strategies across S3 and compute workloads, achieving ~80% platform cost reduction.",
+"Strengthened platform reliability and security through multi-account AWS governance (Control Tower, SCPs), vulnerability automation, and scalable network architecture (Cloud WAN)."
 ]
 },
 {
 "company": "Nokia",
-"role": "DevOps Engineer",
-"duration": "Sep 2022 – Mar 2023",
-"location": "Gurugram",
+"role": "System Integration specialist (Devops & Cloud)",
+"duration": "Feb 2021 – Nov 2021",
+"location": "Noida, Delhi-NCR",
 "responsibilities": [
-"Migrated financial application infrastructure to AWS cloud.",
-"Built CI/CD pipelines automating build and deployment workflows.",
-"Implemented monitoring and logging solutions for enterprise applications."
+"Deployed and managed cloud-native 5G platforms using Kubernetes, Docker, and Ansible—ensuring high availability and scalable infrastructure.",
+"Automated end-to-end provisioning with 10+ Ansible playbooks, reducing manual effort by ~40% and configuration errors by ~80%.",
+"Built CI/CD and deployment workflows for hybrid (on-prem + cloud) environments, improving release consistency and speed.",
+"Designed observability solutions using Prometheus and Grafana, reducing incident detection time by ~60%.",
+"Implemented centralized logging (ELK stack), reducing troubleshooting time from ~2 hours to ~25 minutes.",
+"Engineered automated backup and recovery mechanisms for MySQL and platform components, ensuring reliable RPO/RTO compliance.",
+"Performed advanced troubleshooting across Kubernetes, networking, and storage layers, improving platform stability and uptime."
 ]
 },
 {
 "company": "Global Logic",
-"role": "Systems Engineer",
-"duration": "May 2021 – Sep 2022",
-"location": "Jaipur",
+"role": "Associate Consultant (Devops & Containerization)",
+"duration": "May 2020 – Jan 2021",
+"location": "Gurugram, Delhi-NCR",
 "responsibilities": [
-"Developed automation scripts using Python and Bash.",
-"Managed Linux infrastructure supporting enterprise workloads.",
-"Implemented monitoring solutions improving operational visibility."
+"Designed and optimized Helm charts for 25+ microservices, improving pod startup time by ~30% and deployment efficiency.",
+"Built secure and lightweight Docker images (Alpine/Distroless), reducing image size by ~70% and minimizing critical vulnerabilities.",
+"Automated CI/CD pipelines using Jenkins and Git-based workflows, reducing deployment time from ~45 mins to ~20 mins (~55% improvement).",
+"Increased deployment success rate from ~90% to ~98% through automated validation testing using Python (PyTest/UnitTest).",
+"Implemented distributed storage solutions (Rook, GlusterFS) with dynamic provisioning, improving I/O performance by ~25%.",
+"Integrated service mesh (Istio) enabling secure service-to-service communication, traffic management, and observability across microservices.",
+"Established centralized logging and monitoring (EFK stack), improving system visibility and significantly reducing debugging time."
 ]
 },
 {
 "company": "TCS",
-"role": "Systems Engineer",
-"duration": "May 2021 – Sep 2022",
-"location": "Jaipur",
+"role": "IT Analyst (Devops)",
+"duration": "Jan 2019 – May 2020",
+"location": "Gurugram, Delhi-NCR",
 "responsibilities": [
-"Developed automation scripts using Python and Bash.",
-"Managed Linux infrastructure supporting enterprise workloads.",
-"Implemented monitoring solutions improving operational visibility."
+"Built secure and lightweight Docker images (Alpine/Distroless), reducing image size by ~70% and minimizing critical vulnerabilities.",
+"Designed and implemented observability solutions using Prometheus, Grafana, and ELK/EFK stacks—reducing MTTD by ~50% and improving incident response.",
+"Automated infrastructure provisioning and configuration using Ansible and shell/Python scripting, enabling faster and repeatable environment setup.",
+"Engineered proactive monitoring and alerting systems (Prometheus Alertmanager, CloudWatch), minimizing downtime and improving system reliability.",
+"Led root cause analysis for production incidents across distributed systems (compute, network, storage), reducing recurring failures and improving platform stability.",
+"Developed reusable monitoring and deployment templates (monitoring-as-code, CI/CD patterns), standardizing operations across environments.",
+"Optimized system performance and capacity through metric-driven scaling and resource tuning, improving overall platform efficiency."
 ]
 },
 {
 "company": "Aricent",
-"role": "Systems Engineer",
-"duration": "May 2021 – Sep 2022",
-"location": "Jaipur",
+"role": "Sr. Systems Engineer (Virtualization)",
+"duration": "Mar 2016 – Dec 2018",
+"location": "Gurugram, Delhi-NCR",
 "responsibilities": [
-"Developed automation scripts using Python and Bash.",
-"Managed Linux infrastructure supporting enterprise workloads.",
-"Implemented monitoring solutions improving operational visibility."
+"Deployed and managed application platforms on AWS using Ansible and Python.",
+"Provided operational support for application platforms and Linux-based systems.",
+"Managed vulnerability patching and security updates for Linux servers.",
+"Monitored logs using Splunk and rsyslog, and built basic automation solutions for log handling.",
+"Supported multiple enterprise customers for Linux servers and Cisco NOS applications.",
+"Deployed and maintained Cisco CSPC application on customer environments."
 ]
 },
 {
-"company": "TCS",
-"role": "Systems Engineer",
-"duration": "May 2021 – Sep 2022",
-"location": "Jaipur",
+"company": "HCL Technologies",
+"role": "IT Analyst (Datacentre Operations)",
+"duration": "Jan 2013 – Jan 2016",
+"location": "Noida, Delhi-NCR",
 "responsibilities": [
 "Developed automation scripts using Python and Bash.",
 "Managed Linux infrastructure supporting enterprise workloads.",

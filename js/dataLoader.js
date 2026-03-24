@@ -1,58 +1,36 @@
 /* =========================================
-DEVOPS TOOLS
+SKILL ICONS
 ========================================= */
 
-function renderTools(){
+const TOOL_ICON_MAP = {
 
-const tools = [
+"AWS":"assets/tools/aws.png",
+"Azure":"assets/tools/azure.png",
+"GCP":"assets/tools/databricks.png",
+"Databricks":"assets/tools/databricks.png",
 
-{name:"AWS",icon:"assets/tools/aws.png",class:"tool-aws"},
-{name:"Azure",icon:"assets/tools/azure.png",class:"tool-cloud"},
-{name:"GCP",icon:"assets/tools/gcp.png",class:"tool-cloud"},
+"Docker":"assets/tools/docker.png",
+"Kubernetes":"assets/tools/kubernetes.png",
+"Helm":"assets/tools/helm.png",
 
-{name:"Docker",icon:"assets/tools/docker.png",class:"tool-docker"},
-{name:"Kubernetes",icon:"assets/tools/kubernetes.png",class:"tool-kubernetes"},
-{name:"Helm",icon:"assets/tools/helm.png",class:"tool-kubernetes"},
+"Terraform":"assets/tools/terraform.png",
+"Ansible":"assets/tools/ansible.png",
 
-{name:"Terraform",icon:"assets/tools/terraform.png",class:"tool-terraform"},
-{name:"Ansible",icon:"assets/tools/ansible.png",class:"tool-ansible"},
+"Jenkins":"assets/tools/jenkins.png",
+"GitHub Actions":"assets/tools/github-actions.png",
+"GitLab CI":"assets/tools/argocd.png",
+"ArgoCD":"assets/tools/argocd.png",
 
-{name:"Jenkins",icon:"assets/tools/jenkins.png",class:"tool-jenkins"},
-{name:"GitHub Actions",icon:"assets/tools/github-actions.png",class:"tool-github"},
-{name:"GitLab CI",icon:"assets/tools/gitlab.png",class:"tool-github"},
+"Prometheus":"assets/tools/prometheus.png",
+"Grafana":"assets/tools/grafana.png",
+"ELK Stack":"assets/tools/elk.png",
 
-{name:"Prometheus",icon:"assets/tools/prometheus.png",class:"tool-monitor"},
-{name:"Grafana",icon:"assets/tools/grafana.png",class:"tool-monitor"},
-{name:"ELK Stack",icon:"assets/tools/elk.png",class:"tool-monitor"},
+"Redis":"assets/tools/redis.png",
+"MySQL":"assets/tools/mysql.png",
+"PostgreSQL":"assets/tools/postgres.png",
 
-{name:"Redis",icon:"assets/tools/redis.png",class:"tool-db"},
-{name:"MySQL",icon:"assets/tools/mysql.png",class:"tool-db"},
-{name:"PostgreSQL",icon:"assets/tools/postgres.png",class:"tool-db"},
-
-{name:"Python",icon:"assets/tools/python.png",class:"tool-code"},
-{name:"Bash",icon:"assets/tools/bash.png",class:"tool-code"}
-
-]
-
-const container = document.getElementById("toolsContainer")
-if(!container) return
-
-container.innerHTML=""
-
-tools.forEach(tool=>{
-
-const card = document.createElement("div")
-
-card.className = `tool-card ${tool.class}`
-
-card.innerHTML = `
-<img src="${tool.icon}">
-<p>${tool.name}</p>
-`
-
-container.appendChild(card)
-
-})
+"Python":"assets/tools/python.png",
+"Bash":"assets/tools/bash.png"
 
 }
 
@@ -74,13 +52,10 @@ renderMetrics(data.metrics)
 renderAbout(data.summary)
 
 renderSkills(data.skills)
-renderCompanies(data.companies)
-renderExperience(data.experience)
+renderExperience(data.experience, data.companies)
 renderProjects(data.projects)
 
 renderCertifications(data.certifications)
-
-renderTools()
 
 attachContactLinks(data.personal)
 
@@ -100,8 +75,17 @@ HERO
 
 function renderHero(data){
 
-document.getElementById("profileImage").src = data.personal.profileImage
-document.getElementById("heroName").innerText = data.personal.name
+const heroName = document.getElementById("heroName")
+const profileImage = document.getElementById("profileImage")
+
+if(profileImage) profileImage.src = data.personal.profileImage
+
+if(heroName){
+const rawName = String(data.personal.name || "")
+const spacedName = rawName.replace(/([a-z])([A-Z])/g, "$1 $2").replace(/\s+/g, " ").trim()
+heroName.innerText = spacedName
+}
+
 document.getElementById("heroTitle").innerText = data.personal.title
 document.getElementById("heroTagline").innerText = data.personal.tagline
 
@@ -122,13 +106,15 @@ container.innerHTML = ""
 
 metrics.forEach(metric => {
 
-const value = parseInt(metric.value)
+const rawValue = String(metric.value).trim()
+const value = parseInt(rawValue, 10)
+const hasPlus = rawValue.includes("+")
 
 const card = document.createElement("div")
 card.className = "metric-card"
 
 card.innerHTML = `
-<div class="metric-number" data-target="${value}">0</div>
+<div class="metric-number" data-target="${value}" data-plus="${hasPlus}">0</div>
 <div class="metric-label">${metric.label}</div>
 `
 
@@ -157,6 +143,7 @@ const counters = document.querySelectorAll(".metric-number")
 counters.forEach(counter => {
 
 const target = +counter.getAttribute("data-target")
+const hasPlus = counter.getAttribute("data-plus") === "true"
 
 let count = 0
 
@@ -174,7 +161,7 @@ requestAnimationFrame(update)
 
 }else{
 
-counter.innerText = target + "+"
+counter.innerText = hasPlus ? target + "+" : target
 
 }
 
@@ -220,7 +207,11 @@ card.className = "skill-card"
 let items = ""
 
 skills[category].forEach(skill => {
-items += `<li>${skill.name}</li>`
+
+const icon = TOOL_ICON_MAP[skill.name]
+const iconHtml = icon ? `<img src="${icon}" alt="${skill.name}">` : ""
+items += `<li class="skill-item">${iconHtml}<span>${skill.name}</span></li>`
+
 })
 
 card.innerHTML = `
@@ -237,45 +228,22 @@ container.appendChild(card)
 
 
 /* =========================================
-COMPANIES
-========================================= */
-
-function renderCompanies(companies){
-
-const container = document.getElementById("companiesContainer")
-if(!container) return
-
-container.innerHTML = ""
-
-companies.forEach(company => {
-
-const card = document.createElement("div")
-card.className = "company-card"
-
-card.innerHTML = `
-<img src="${company.logo}">
-<h3>${company.name}</h3>
-<p>${company.industry}</p>
-`
-
-container.appendChild(card)
-
-})
-
-}
-
-
-
-/* =========================================
 EXPERIENCE
 ========================================= */
 
-function renderExperience(exp){
+function renderExperience(exp, companies){
 
 const container = document.getElementById("experienceContainer")
 if(!container) return
 
 container.innerHTML = ""
+
+const companyLogos = {}
+if(Array.isArray(companies)){
+companies.forEach(company => {
+companyLogos[company.name.toLowerCase()] = company.logo
+})
+}
 
 exp.forEach(item => {
 
@@ -288,7 +256,16 @@ item.responsibilities.forEach(r=>{
 responsibilities += `<li>${r}</li>`
 })
 
+const companyKey = String(item.company).toLowerCase()
+let logo = companyLogos[companyKey]
+if(!logo){
+const matchKey = Object.keys(companyLogos).find(key => companyKey.includes(key))
+if(matchKey) logo = companyLogos[matchKey]
+}
+const logoHtml = logo ? `<img class="experience-logo" src="${logo}" alt="${item.company} logo">` : ""
+
 card.innerHTML = `
+${logoHtml}
 <h3>${item.role}</h3>
 <h4>${item.company}</h4>
 <p>${item.duration} • ${item.location}</p>
